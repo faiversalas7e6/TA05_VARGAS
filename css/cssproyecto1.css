@@ -1,0 +1,128 @@
+/* ================================================= */
+/* 1. RESET Y ESTRUCTURA GENERAL */
+/* ================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Coloca header, nav, main y footer en columna */
+}
+
+/* El contenido central se limita en ancho */
+.titulo-proyecto,
+.navegador-secundario,
+.detalle-main,
+footer {
+    max-width: 1200px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ================================================= */
+/* 2. BLOQUES SUPERIORES (TÍTULO y NAVEGADOR) */
+/* ================================================= */
+
+/* Título del Proyecto (La banda superior) */
+.titulo-proyecto {
+    background-color: #3f51b5; /* Azul oscuro */
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 2px solid #5c6bc0;
+}
+
+.titulo-proyecto h1 {
+    font-size: 1.8em;
+}
+
+/* Navegador entre páginas (La segunda banda superior) */
+.navegador-secundario {
+    background-color: #e0e7ff; /* Azul claro */
+    padding: 10px 0;
+    margin-bottom: 20px; /* Espacio antes del contenido principal */
+    border-bottom: 1px solid #c5cae9;
+}
+
+.navegador-secundario ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centra los enlaces */
+}
+
+.navegador-secundario li {
+    margin: 0 15px;
+}
+
+.navegador-secundario a {
+    text-decoration: none;
+    color: #3f51b5;
+    font-weight: 600;
+}
+
+/* ================================================= */
+/* 3. DISPOSICIÓN CENTRAL (MAIN) - 2 COLUMNAS */
+/* ================================================= */
+.detalle-main {
+    display: flex; /* Habilita Flexbox */
+    flex-grow: 1; 
+    gap: 20px; /* Espacio entre las columnas */
+    padding-bottom: 20px; /* Espacio antes del footer */
+}
+
+/* BARRA LATERAL IZQUIERDA (Navegador Link: proyecto2) */
+.link-navegador {
+    flex: 0 0 150px; /* No crece, no encoge, ancho fijo más pequeño */
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column; /* Para apilar los elementos internos */
+}
+
+.link-navegador a {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #4CAF50; /* Color distintivo para el enlace */
+    font-weight: bold;
+}
+
+/* El bloque vacío debajo del link, si es necesario */
+.link-navegador .bloque-vacio {
+    /* Aquí podrías definir estilos si quieres que ese bloque inferior se vea */
+    height: 100px; /* Ejemplo de altura para visualizar */
+    background-color: #e6ffe6;
+    margin-top: 15px;
+}
+
+/* CONTENIDO PRINCIPAL DERECHO (información_del_proyecto) */
+.informacion-detalle {
+    flex-grow: 1; /* Ocupa todo el espacio restante horizontalmente */
+    padding: 0 15px;
+}
+
+.informacion-detalle h2 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+}
+
+/* ================================================= */
+/* 4. FOOTER (Copyright) */
+/* ================================================= */
+footer {
+    background-color: #222;
+    color: #aaa;
+    padding: 15px 20px;
+    text-align: center;
+    margin-top: auto; /* Empuja el footer hacia abajo si el contenido es corto */
+    font-size: 0.9em;
+}

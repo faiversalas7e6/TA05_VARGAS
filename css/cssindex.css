@@ -1,0 +1,94 @@
+/* 1. RESET BÁSICO: Importante para que todo quede pegado a los bordes sin espacios blancos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Asegura que la página ocupe al menos toda la altura de la pantalla */
+    display: flex;
+    flex-direction: column; /* Organiza header, main y footer verticalmente */
+}
+
+/* --- HEADER --- */
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-bottom: 2px solid #ddd;
+    
+    /* CONFIGURACIÓN FLEX PARA CENTRAR EL TÍTULO */
+    display: flex;
+    justify-content: center; /* Esto empuja el título al centro absoluto */
+    align-items: center;     /* Centra verticalmente */
+    position: relative;      /* Necesario para que el logo sepa dónde colocarse */
+}
+
+/* El logo se "flota" a la izquierda sin molestar al título */
+.logo {
+    position: absolute;  /* Posición absoluta */
+    left: 20px;          /* Pegado 20px desde la izquierda */
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Aseguramos que el título no tenga márgenes extraños */
+header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+/* --- CONTENEDOR PRINCIPAL (MAIN) --- */
+main {
+    display: flex; /* ESTO ES LA CLAVE: Pone el aside y la section uno al lado del otro */
+    flex: 1; /* Hace que el main crezca para ocupar todo el espacio disponible entre header y footer */
+}
+
+/* --- BARRA LATERAL (ASIDE) --- */
+.sidebar-proyectos {
+    width: 320px; /* 1. Aumentado el ancho (antes era 250px) */
+    background-color: #e9ecef;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+
+    /* 2. Truco para centrar el contenido verticalmente y bajarlo */
+    display: flex;            /* Activa el modo flexible */
+    flex-direction: column;   /* Mantiene el orden vertical */
+    justify-content: center;  /* CENTRA verticalmente (lo baja al medio) */
+    align-items: center;      /* CENTRA horizontalmente (lo pone en el medio del ancho) */
+    text-align: center;       /* Asegura que el texto también esté centrado */
+}
+
+/* Opcional: Si quieres que los enlaces se vean un poco más grandes al estar centrados */
+.sidebar-proyectos h2 {
+    margin-bottom: 20px;      /* Más espacio debajo del título "Proyectos" */
+    font-size: 1.5rem;        /* Un poco más grande */
+}
+
+.sidebar-proyectos li {
+    margin-bottom: 15px;      /* Más separación entre enlaces */
+}
+.enlace-proyecto {
+    padding-top: 40px;
+}
+
+/* --- CONTENIDO PRINCIPAL (SECTION) --- */
+#informacion-principal {
+    flex: 1; /* ESTO ES LA CLAVE 2: Le dice que ocupe TODO el espacio sobrante */
+    padding: 40px; /* Espacio interno para que el texto no toque los bordes */
+    background-color: #fff; /* Fondo blanco */
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+footer a {
+    color: #4da3ff;
+    text-decoration: none;
+}
