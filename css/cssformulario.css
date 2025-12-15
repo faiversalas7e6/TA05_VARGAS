@@ -1,195 +1,227 @@
-/* --- Variables de Color y Tipografía --- */
+/* =========================================
+   1. VARIABLES & CONFIGURACIÓN (Cross-Browser)
+   ========================================= */
 :root {
-    --primary-color: #4a90e2; /* Azul moderno */
-    --secondary-color: #2c3e50; /* Gris oscuro azulado */
-    --bg-color: #f4f7f6; /* Gris muy claro para el fondo */
-    --card-bg: #ffffff; /* Blanco para las tarjetas */
-    --text-color: #333333;
-    --text-light: #ffffff;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    --transition: all 0.3s ease;
+    /* Paleta de Colores Moderna y Segura */
+    --primary: #2563eb;       /* Azul vibrante */
+    --secondary: #1e293b;     /* Azul oscuro/gris */
+    --accent: #3b82f6;        /* Azul claro para hovers */
+    --bg-body: #f1f5f9;       /* Fondo gris muy suave */
+    --bg-card: #ffffff;       /* Blanco puro */
+    --text-main: #334155;     /* Gris oscuro para texto (menos cansa la vista que el negro) */
+    --text-light: #f8fafc;    /* Texto claro */
+
+    /* Sombras y Bordes */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --radius: 12px;
 }
 
-/* --- Reset Básico --- */
+/* =========================================
+   2. RESET (Normalización para todos los navegadores)
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Fundamental para el cálculo de anchos */
 }
 
+/* Tipografía del sistema para mejor rendimiento y compatibilidad */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
     line-height: 1.6;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    -webkit-font-smoothing: antialiased; /* Suavizado de fuente en Mac/iOS */
 }
 
-/* --- Header --- */
+/* =========================================
+   3. ESTRUCTURA GENERAL
+   ========================================= */
+
+/* Header */
 header.contenedor-principal {
-    background: linear-gradient(135deg, var(--secondary-color), #34495e);
+    background-color: var(--secondary);
     color: var(--text-light);
-    padding: 1.5rem 2rem;
+    padding: 1rem 5%; /* % para márgenes laterales seguros */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: var(--shadow);
+    flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
 }
 
 header .logo {
+    font-weight: 800;
     font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border: 2px solid var(--text-light);
-    padding: 5px 10px;
-    border-radius: 4px;
+    letter-spacing: -1px;
+    background: rgba(255,255,255,0.1);
+    padding: 5px 15px;
+    border-radius: var(--radius);
 }
 
-header h1 {
-    font-size: 1.8rem;
-    font-weight: 300;
-}
-
-/* --- Navegación --- */
+/* Navegación */
 .navegador-secundario {
-    background-color: var(--card-bg);
-    padding: 1rem 2rem;
+    background-color: var(--bg-card);
+    padding: 1rem 5%;
     display: flex;
     justify-content: center;
     gap: 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-sm);
+    position: sticky; /* El menú se queda pegado arriba al hacer scroll */
+    top: 0;
+    z-index: 100;
 }
 
 .navegador-secundario a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--text-main);
     font-weight: 600;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    position: relative;
-    transition: var(--transition);
-}
-
-/* Efecto de subrayado animado */
-.navegador-secundario a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: var(--primary-color);
-    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
 }
 
 .navegador-secundario a:hover {
-    color: var(--primary-color);
+    background-color: var(--primary);
+    color: white;
 }
 
-.navegador-secundario a:hover::after {
-    width: 100%;
-}
-
-/* --- Estructura Principal (Main) --- */
+/* Layout Principal (Grid System) */
 main {
     display: grid;
-    grid-template-columns: 250px 1fr; /* Aside fijo, contenido flexible */
+    /* Grid inteligente: Sidebar de 260px, resto flexible */
+    grid-template-columns: 260px 1fr;
     gap: 2rem;
-    max-width: 1200px;
     width: 90%;
+    max-width: 1200px;
     margin: 2rem auto;
     flex: 1; /* Empuja el footer hacia abajo */
 }
 
-/* --- Sidebar (Aside) --- */
+/* =========================================
+   4. COMPONENTES
+   ========================================= */
+
+/* Sidebar / Aside */
 aside {
-    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .proyecto-item {
-    background-color: var(--card-bg);
+    background-color: var(--bg-card);
     padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
     cursor: pointer;
-    border-left: 4px solid transparent;
-    transition: var(--transition);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 5px solid transparent;
 }
 
 .proyecto-item:hover {
-    border-left: 4px solid var(--primary-color);
-    transform: translateX(5px); /* Pequeño desplazamiento a la derecha */
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--primary);
 }
 
-/* --- Sección de Imágenes (Section) --- */
+/* Sección de Imágenes */
 section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grilla responsive */
+    /* Esto crea columnas automáticas que nunca son menores a 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    align-content: start;
 }
 
 .contenedor-imagen {
-    background-color: var(--card-bg);
-    height: 200px; /* Altura fija para demostración */
-    border-radius: 12px;
+    background-color: var(--bg-card);
+    height: 250px;
+    border-radius: var(--radius);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #aaa;
-    font-size: 1.2rem;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    border: 1px solid #eee;
-    overflow: hidden; /* Para cuando pongas imágenes reales */
+    color: #94a3b8;
+    border: 2px dashed #e2e8f0;
+    transition: border-color 0.3s ease;
 }
 
 .contenedor-imagen:hover {
-    transform: translateY(-5px); /* Levantar tarjeta */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    border-color: var(--primary);
+    color: var(--primary);
 }
 
-/* --- Footer --- */
+/* Footer */
 footer.contenedor-principal {
-    background-color: var(--secondary-color);
-    color: #ccc;
+    background-color: var(--secondary);
+    color: var(--text-light);
     text-align: center;
-    padding: 1.5rem;
-    margin-top: auto;
+    padding: 2rem;
+    margin-top: 3rem;
     font-size: 0.9rem;
 }
 
-/* --- Responsividad (Móviles) --- */
-@media (max-width: 768px) {
+/* =========================================
+   5. MEDIA QUERIES (Responsividad Total)
+   ========================================= */
+
+/* TABLETS (Pantallas medianas: menos de 1024px) */
+@media (max-width: 1024px) {
     main {
-        grid-template-columns: 1fr; /* Una sola columna */
+        width: 95%; /* Usar más ancho de pantalla */
+        gap: 1.5rem;
+    }
+}
+
+/* MÓVILES (Pantallas pequeñas: menos de 768px) */
+@media (max-width: 768px) {
+    /* Cambiamos el Grid principal a una sola columna */
+    main {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse; /* Pone el aside (lista) debajo del contenido principal si prefieres, o quita '-reverse' para dejarlo arriba */
     }
 
+    /* Header apilado */
     header.contenedor-principal {
         flex-direction: column;
         gap: 10px;
         text-align: center;
     }
 
+    /* Navegación adaptable */
     .navegador-secundario {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.8rem;
     }
 
-    /* Convertir el aside en una lista horizontal deslizable en móvil (opcional) */
+    .navegador-secundario a {
+        font-size: 0.9rem; /* Texto un poco más pequeño */
+        flex-grow: 1; /* Botones ocupan el ancho disponible */
+        text-align: center;
+        background-color: #f8fafc; /* Fondo suave para botones en móvil */
+    }
+
+    /* Ajuste del Sidebar en móvil */
     aside {
-        display: flex;
-        overflow-x: auto;
-        gap: 10px;
+        flex-direction: row; /* Convertir lista vertical en horizontal */
+        overflow-x: auto; /* Permitir scroll lateral */
         padding-bottom: 10px;
+        scroll-snap-type: x mandatory; /* Efecto magnético al scrollear */
     }
 
     .proyecto-item {
-        min-width: 150px;
+        min-width: 200px; /* Ancho fijo mínimo para scroll */
+        scroll-snap-align: start;
         margin-bottom: 0;
         text-align: center;
+    }
+
+    section {
+        grid-template-columns: 1fr; /* Una imagen por fila en móviles muy pequeños */
     }
 }
