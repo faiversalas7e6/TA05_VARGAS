@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Proyecto 1 | Mi Portafolio</title>
+      <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+      <div class="page-with-sidebar">
+        <!-- SIDEBAR / NAVEGADOR LATERAL -->
+        <aside class="sidebar">
+          <div class="sidebar-header">
+            <a href="../index.html" class="sidebar-logo">
+              <div class="logo-icon">P</div>
+              <span class="logo-text">Mi Portafolio</span>
+            </a>
+          </div>
+          <nav class="sidebar-nav">
+            <p class="sidebar-nav-title">Navegador</p>
+            <ul class="sidebar-nav-list">
+              <li class="sidebar-nav-item">
+                <a href="proyecto1.html" class="sidebar-nav-link active">
+                  <span>Link: Proyecto 1</span>
+                  <span class="sidebar-nav-arrow">›</span>
+                </a>
+              </li>
+              <li class="sidebar-nav-item">
+                <a href="proyecto2.html" class="sidebar-nav-link">
+                  <span>Link: Proyecto 2</span>
+                  <span class="sidebar-nav-arrow">›</span>
+                </a>
+              </li>
+              <li class="sidebar-nav-item">
+                <a href="proyecto3.html" class="sidebar-nav-link">
+                  <span>Link: Proyecto 3</span>
+                  <span class="sidebar-nav-arrow">›</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- ÁREA PRINCIPAL -->
+        <div class="main-area">
+          <!-- Título del Proyecto -->
+          <header class="project-header">
+            <h1>Título: Proyecto 1</h1>
+          </header>
+
+          <!-- Navegador entre páginas -->
+          <nav class="page-nav">
+            <div class="nav-links">
+              <a href="../index.html" class="btn">Inicio</a>
+              <a href="proyectos.html" class="btn">Todos los Proyectos</a>
+            </div>
+            <div class="nav-arrows">
+              <button class="btn" disabled>← Anterior</button>
+              <span>1 / 3</span>
+              <a href="proyecto2.html" class="btn">Siguiente →</a>
+            </div>
+          </nav>
+
+          <!-- Contenido del Proyecto -->
+          <main class="project-content">
+            <div class="project-layout">
+              <!-- Imagen del Proyecto -->
+              <div class="project-image">
+                Imagen del Proyecto
+              </div>
+
+              <!-- Información del Proyecto -->
+              <div class="project-info">
+                <h2>Información del Proyecto</h2>
+                <p>Información del proyecto 1. Esta es una descripción detallada del proyecto que incluye todos los aspectos importantes como objetivos, metodología, herramientas utilizadas y resultados obtenidos. El proyecto fue desarrollado con las mejores prácticas de la industria.</p>
+
+                <div class="project-details">
+                  <div class="detail-item">
+                    <label>Tecnologías:</label>
+                    <div class="tech-tags">
+                      <span class="tech-tag">React</span>
+                      <span class="tech-tag">TypeScript</span>
+                      <span class="tech-tag">Tailwind CSS</span>
+                    </div>
+                  </div>
+                  <div class="detail-item">
+                    <label>Duración:</label>
+                    <p>3 meses</p>
+                  </div>
+                  <div class="detail-item">
+                    <label>Rol:</label>
+                    <p>Desarrollador Principal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+
+          <!-- Footer -->
+          <footer class="footer">
+            <p>Copyright 2025 - Todos los derechos reservados</p>
+          </footer>
+        </div>
+      </div>
+    </body>
+</html>

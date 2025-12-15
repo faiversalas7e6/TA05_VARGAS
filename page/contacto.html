@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Contacto | Mi Portafolio</title>
+      <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+      <div class="contact-page">
+        <!-- HEADER -->
+        <header class="header">
+          <a href="../index.html" class="header-logo">
+            <div class="logo-icon">P</div>
+            <span class="logo-text">Mi Portafolio</span>
+          </a>
+        </header>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="contact-content">
+          <div class="contact-intro">
+            <h1>Contáctame</h1>
+            <p>Si tienes alguna pregunta o quieres trabajar conmigo, no dudes en enviarme un mensaje.</p>
+          </div>
+
+          <div class="contact-form-container">
+            <h2>Formulario de Contacto</h2>
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="asunto">Asunto</label>
+                <input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje" required>
+              </div>
+
+              <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+              </div>
+
+              <button type="submit" class="form-submit">Enviar Mensaje</button>
+            </form>
+          </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+          <p>Copyright 2025 - Todos los derechos reservados</p>
+        </footer>
+      </div>
+    </body>
+</html>
