@@ -1,0 +1,53 @@
+/* --- PROYECTO 1: ESTILO AZUL / CORPORATIVO --- */
+:root {
+  --primary: #2563eb; /* Azul intenso */
+  --bg-body: #f8fafc;
+  --text-main: #1e293b;
+  --sidebar-w: 260px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background: var(--bg-body); color: var(--text-main); display: flex; }
+a { text-decoration: none; color: inherit; }
+
+/* LAYOUT CON SIDEBAR */
+.page-with-sidebar { display: flex; width: 100%; min-height: 100vh; }
+
+.sidebar {
+  width: var(--sidebar-w);
+  background: #fff;
+  border-right: 1px solid #e2e8f0;
+  position: fixed;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.sidebar-logo { display: flex; gap: 10px; font-weight: bold; margin-bottom: 3rem; align-items: center; }
+.logo-icon { background: var(--primary); color: white; width: 35px; height: 35px; border-radius: 8px; display: grid; place-items: center; }
+
+.sidebar-nav-list { list-style: none; }
+.sidebar-nav-link { display: flex; justify-content: space-between; padding: 12px 0; color: #64748b; transition: 0.3s; }
+.sidebar-nav-link:hover, .sidebar-nav-link.active { color: var(--primary); font-weight: bold; padding-left: 5px; }
+
+/* CONTENIDO PRINCIPAL */
+.main-area { margin-left: var(--sidebar-w); flex: 1; padding: 4rem; }
+
+.project-header h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
+
+/* Navegación interna (Botones) */
+.page-nav { display: flex; justify-content: space-between; margin-bottom: 3rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 1rem; }
+.btn { padding: 8px 20px; border: 1px solid #cbd5e1; border-radius: 6px; transition: 0.2s; font-size: 0.9rem; }
+.btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* Grid del Proyecto */
+.project-layout { display: grid; grid-template-columns: 3fr 2fr; gap: 3rem; }
+.project-image { background: linear-gradient(to right, #cbd5e1, #94a3b8); height: 400px; border-radius: 12px; display: grid; place-items: center; color: white; font-size: 1.5rem; }
+
+.project-info h2 { margin-bottom: 1rem; font-size: 1.8rem; }
+.project-info p { line-height: 1.7; color: #475569; margin-bottom: 2rem; }
+
+/* Detalles */
+.project-details { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.tech-tag { background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-right: 5px; }
+
+.footer { margin-top: 4rem; text-align: center; font-size: 0.9rem; color: #94a3b8; }
