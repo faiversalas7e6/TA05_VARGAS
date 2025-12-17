@@ -25,7 +25,20 @@ a { text-decoration: none; }
   flex: 1;
   padding: 3rem 4rem;
 }
+.sidebar {
+  /* Propiedades que ya deberías tener */
+  width: 280px; /* o la medida que tengas */
+  background: white;
+  border-right: 1px solid #e2e8f0;
 
+  /* --- LO NUEVO PARA EL SCROLL --- */
+  position: fixed;   /* Fija la barra para que no se mueva de sitio */
+  top: 0;
+  left: 0;
+  height: 100vh;     /* Ocupa el 100% de la altura de la pantalla */
+  overflow-y: auto;  /* ¡MAGIA! Si el contenido es largo, aparece scroll */
+  z-index: 1000;     /* Asegura que esté por encima de otras cosas si hace falta */
+}
 .all-projects-header {
   display: flex;
   align-items: center;

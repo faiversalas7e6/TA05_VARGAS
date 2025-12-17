@@ -1,207 +1,58 @@
+/* main.css - ESTILO PARA INDEX.HTML */
 :root {
-  --primary-color: #2563eb;
-  --text-dark: #1e293b;
-  --text-gray: #64748b;
-  --bg-light: #f8fafc;
-  --white: #ffffff;
+  --bg: #0f172a; /* Fondo oscuro elegante */
+  --card-bg: #1e293b;
+  --text: #f1f5f9;
+  --accent: #38bdf8; /* Azul cielo */
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body { background-color: var(--bg); color: var(--text); }
+
+.main-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+
+.header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 2rem; border-bottom: 1px solid #334155; }
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
+
+.hero { text-align: center; padding: 4rem 0; }
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; color: transparent; }
+.hero p { color: #94a3b8; font-size: 1.2rem; }
+
+/* GRID DE 30 ELEMENTOS */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Se adapta a pantallas */
+  gap: 20px;
+  padding: 2rem 0;
 }
 
-body {
-  background-color: var(--bg-light);
-  color: var(--text-dark);
-}
-
-.main-container {
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #334155;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
-/* HEADER (Igual a las otras páginas para consistencia) */
-.header {
-  background: var(--white);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2); border-color: var(--accent); }
 
-.header-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  color: var(--text-dark);
-}
-
-.logo-icon {
-  background: var(--primary-color);
-  color: white;
-  width: 32px;
-  height: 32px;
+.card-img {
+  height: 120px;
+  background: #334155;
   display: grid;
   place-items: center;
-  border-radius: 6px;
+  font-size: 2rem;
   font-weight: bold;
+  color: #64748b;
 }
 
-.header-link {
-  text-decoration: none;
-  color: var(--text-gray);
-  font-weight: 500;
-  transition: color 0.2s;
-}
+.card-info { padding: 1rem; }
+.card-info h3 { font-size: 1rem; margin-bottom: 5px; }
+.card-info p { font-size: 0.8rem; color: #94a3b8; }
 
-.header-link:hover {
-  color: var(--primary-color);
-}
-
-/* HERO SECTION (Bienvenida) */
-.hero-section {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  color: white;
-  text-align: center;
-  padding: 6rem 2rem;
-  margin-bottom: 3rem;
-}
-
-.hero-section h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  letter-spacing: -1px;
-}
-
-.hero-section p {
-  font-size: 1.25rem;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* SECCIÓN DE PROYECTOS DESTACADOS */
-.projects-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  width: 100%;
-}
-
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 1rem;
-}
-
-.section-header h2 {
-  font-size: 1.8rem;
-  color: var(--text-dark);
-}
-
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  background-color: white;
-  color: var(--primary-color);
-  border: 1px solid #e2e8f0;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-
-.btn:hover {
-  background-color: #eff6ff;
-  border-color: var(--primary-color);
-}
-
-/* TARJETAS DE PROYECTOS */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-
-.project-card {
-  background: var(--white);
-  border-radius: 12px;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid transparent;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  border-color: #e2e8f0;
-}
-
-.project-card-image {
-  height: 200px;
-  background-color: #cbd5e1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.project-card-content {
-  padding: 1.5rem;
-}
-
-.project-card-content h3 {
-  font-size: 1.4rem;
-  margin-bottom: 0.75rem;
-  color: var(--text-dark);
-}
-
-.project-card-content p {
-  color: var(--text-gray);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limita el texto a 3 líneas */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.project-card-link {
-  color: var(--primary-color);
-  font-weight: 600;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-/* FOOTER */
-.footer {
-  margin-top: auto;
-  background-color: var(--white);
-  padding: 2rem;
-  text-align: center;
-  color: var(--text-gray);
-  border-top: 1px solid #e2e8f0;
-}
+footer { text-align: center; margin-top: 4rem; color: #64748b; padding-bottom: 2rem; }
