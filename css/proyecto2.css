@@ -100,7 +100,26 @@ a { text-decoration: none; color: inherit; }
     gap: 2rem;
   }
 
-  .project-image {
-    height: 250px; /* Imatges menys altes en mòbil */
-  }
+/* --- MODIFICACIÓN: IMAGEN --- */
+
+.project-image {
+  /* Quitamos el background radial morado porque la foto lo tapará */
+  background: #000;
+  height: 300px;
+  border-radius: 16px;
+  border: 1px solid #374151;
+
+  /* IMPORTANTE: overflow hidden hace que la imagen respete las esquinas redondeadas */
+  overflow: hidden;
+
+  /* Quitamos display:flex, align-items, etc., porque ya no centramos un elemento pequeño */
+  display: block;
+}
+
+/* NUEVA REGLA: Esto hace que la foto se estire para llenar el hueco */
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Mágica: Rellena todo el cuadro recortando lo que sobre, sin deformar la foto */
+  display: block;    /* Elimina espacios blancos extraños debajo de la imagen */
 }
