@@ -1,28 +1,134 @@
-/* main.css - ESTILO PARA INDEX.HTML */
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN BÁSICA
+   ========================================= */
 :root {
-  --bg: #0f172a; /* Fondo oscuro elegante */
-  --card-bg: #1e293b;
-  --text: #f1f5f9;
-  --accent: #38bdf8; /* Azul cielo */
+  --bg: #0f172a;       /* Fondo principal */
+  --card-bg: #1e293b;  /* Fondo cajas */
+  --text: #f1f5f9;     /* Texto principal */
+  --muted: #94a3b8;    /* Texto secundario */
+  --accent: #38bdf8;   /* Azul brillante */
+  --border: #334155;   /* Color bordes */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
 body { background-color: var(--bg); color: var(--text); }
 
-.main-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+/* =========================================
+   2. ESTRUCTURA (HEADER, FOOTER, MAIN)
+   ========================================= */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Footer siempre abajo */
+}
 
-.header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 2rem; border-bottom: 1px solid #334155; }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
 .logo { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
+.nav-btn { font-size: 1rem; font-weight: bold; color: var(--accent); text-decoration: none; }
 
+footer {
+  text-align: center;
+  margin-top: auto; /* Empuja al fondo */
+  color: #64748b;
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+}
+
+/* =========================================
+   3. HERO SECTION (Títulos principales)
+   ========================================= */
 .hero { text-align: center; padding: 4rem 0; }
-.hero h1 { font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; color: transparent; }
-.hero p { color: #94a3b8; font-size: 1.2rem; }
 
-/* GRID DE 30 ELEMENTOS */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p { color: var(--muted); font-size: 1.2rem; margin-bottom: 2rem; }
+
+/* =========================================
+   4. NAVEGADOR VISUAL (El recuadro con P1 y P2)
+   ========================================= */
+.sidebar-nav {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-nav-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #64748b;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: left; /* Alineado a la izquierda como pediste */
+}
+
+/* Lista Horizontal (Flexbox) */
+.sidebar-nav-list.horizontal-list {
+  display: flex;
+  gap: 20px;       /* Espacio entre las dos imágenes */
+  list-style: none;
+}
+
+.sidebar-nav-item { flex: 1; } /* Ambos ocupan el mismo ancho */
+
+/* Estilo de los Botones de Imagen */
+.sidebar-img-link {
+  display: block;
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.sidebar-img-link img { width: 100%; height: 100%; object-fit: cover; }
+
+.sidebar-img-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+  border-color: var(--accent);
+}
+
+/* Texto "P1 / P2" sobre la imagen */
+.img-overlay {
+  position: absolute;
+  bottom: 0; left: 0; width: 100%;
+  background: rgba(15, 23, 42, 0.8);
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 4px;
+  font-weight: bold;
+}
+
+/* =========================================
+   5. TARJETAS DE PROYECTOS (Grid general)
+   ========================================= */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Se adapta a pantallas */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   padding: 2rem 0;
 }
@@ -30,29 +136,17 @@ body { background-color: var(--bg); color: var(--text); }
 .card {
   background: var(--card-bg);
   border-radius: 12px;
+  border: 1px solid var(--border);
   text-decoration: none;
   color: white;
-  overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid #334155;
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
 }
 
-.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2); border-color: var(--accent); }
-
-.card-img {
-  height: 120px;
-  background: #334155;
-  display: grid;
-  place-items: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #64748b;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+  border-color: var(--accent);
 }
-
-.card-info { padding: 1rem; }
-.card-info h3 { font-size: 1rem; margin-bottom: 5px; }
-.card-info p { font-size: 0.8rem; color: #94a3b8; }
-
-footer { text-align: center; margin-top: 4rem; color: #64748b; padding-bottom: 2rem; }
