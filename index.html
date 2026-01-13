@@ -3,29 +3,33 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>30 Days of Code | My Portfolio</title>
+      <title>Faiver Vargas</title>
       <link rel="stylesheet" href="css/index.css">
-    </head>
+      <link rel="icon" type="image/png" href="./imagen/favicon.png">
+      </head>
     <body id="body1">
-
+      <div id="google_translate_element" class="google-widget"></div>
       <div class="intro-screen" id="intro">
-          <div class="intro-text">welcome to my portfolio</div>
+          <div>welcome to my portfolio</div>
       </div>
+
       <div class="main-container">
         <header class="header">
-          <div class="logo">My Portfolio</div>
+          <div class="logo">My Portfolio made by Faiver</div>
           <nav>
-            <a href="page/contact.html" class="nav-btn">Contact Me</a>
+            <a href="page/contact.html" class="nav-btn" data-translate="menu_contact">Contact Me</a>
           </nav>
           <nav id="nav1">
-            <a href="page/proyectos.html" class="grid-container"> project list</a>
+            <a href="page/proyectos.html" class="grid-container" data-translate="menu_list">project list</a>
           </nav>
         </header>
         <section class="hero">
-          <h1>30 Days of Code</h1>
-          <p>A collection of 30 unique web development projects built with passion.</p>
+          <h1 data-translate="hero_title">30 Days of Code</h1>
+          <p data-translate="hero_desc">A collection of 30 unique web development projects built with passion.</p>
+
           <nav class="sidebar-nav">
-            <p class="sidebar-nav-title">visual browser</p>
+            <p class="sidebar-nav-title" data-translate="visual_browser">visual browser</p>
+
             <ul class="sidebar-nav-list horizontal-list">
               <li class="sidebar-nav-item">
                 <a href="./page/project1.html" class="sidebar-img-link">
@@ -42,12 +46,14 @@
             </ul>
           </nav>
         </section>
+
         <footer>
-          <p>&copy; 2025 My Portfolio. Built with passion.</p>
+          <p data-translate="footer_text">&copy; 2025 My Portfolio. Built with passion.</p>
         </footer>
       </div>
-      <script src="./java/script.js"> </script>
+
+      <script src="java/welcome.js"></script>
       <script src="./java/theme.js"></script>
-      <script src="./java/scroll.js"></script>
+      <script src="./java/idioma.js"></script>
     </body>
 </html>

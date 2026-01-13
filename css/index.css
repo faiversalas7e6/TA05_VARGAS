@@ -231,3 +231,86 @@ body.dark-mode .logo {
     /* Header adaptable */
     .header { flex-direction: column; gap: 1rem; text-align: center; }
 }
+
+/* =========================================
+   ESTILOS GOOGLE TRANSLATE (POSICIÓN ACTUALIZADA)
+   ========================================= */
+
+.google-widget {
+    position: fixed;
+    top: 80px;   /* <--- CAMBIO: Antes era 20px. Ahora baja para estar debajo del tema */
+    right: 20px; /* <--- CAMBIO: Alineado a la derecha igual que el botón de tema */
+    z-index: 10000;
+}
+
+/* Ocultar la barra azul de Google */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+body {
+    top: 0px !important;
+}
+
+/* Estilo del botón desplegable */
+.goog-te-gadget-simple {
+    background-color: #fff !important; /* Fondo blanco */
+    border: 2px solid #e2e8f0 !important;
+    padding: 5px 10px !important;
+    border-radius: 10px !important; /* Bordes redondeados */
+    font-family: 'Segoe UI', sans-serif !important;
+    font-size: 13px !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Si usas modo oscuro y quieres que el widget también sea oscuro, añade esto: */
+/*
+body.dark-mode .goog-te-gadget-simple {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+    color: white !important;
+}
+*/
+
+.goog-te-gadget-icon {
+    display: none !important;
+}
+
+.goog-te-menu-value span {
+    font-weight: bold;
+    color: #333 !important; /* Texto oscuro */
+}
+
+/* =========================================
+   ESTILO DEL NUEVO LOGO DE IMAGEN
+   ========================================= */
+
+/* Aseguramos que el contenedor centre la imagen */
+.logo, .header-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Quita el subrayado si es un enlace */
+}
+
+/* Estilo de la imagen en sí */
+.logo-img {
+    height: 50px; /* Altura fija para que no rompa el header (ajústalo si lo quieres más grande) */
+    width: auto;  /* El ancho se ajusta solo para no deformar la imagen */
+    border-radius: 12px; /* Bordes redondeados modernos. Usa 50% si lo quieres circular */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra suave para darle profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+    object-fit: cover; /* Asegura que la imagen rellene el espacio bien */
+}
+
+/* Efecto bonito al pasar el ratón por encima */
+.logo-img:hover {
+    transform: scale(1.05); /* Se hace un pelín más grande */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* La sombra crece */
+}
+
+/* (OPCIONAL) Si tu logo es oscuro y no se ve bien en MODO OSCURO,
+   puedes añadir un fondo blanco o un borde claro así: */
+body.dark-mode .logo-img {
+    /* background-color: white;  <-- Descomenta esto si tu logo es PNG transparente y no se ve en oscuro */
+    box-shadow: 0 4px 10px rgba(255,255,255,0.1); /* Sombra más clara para fondo oscuro */
+    border: 1px solid #334155;
+}
