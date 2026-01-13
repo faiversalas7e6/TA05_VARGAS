@@ -41,22 +41,7 @@ body {
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--border);
 }
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--accent);         /
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
 .nav-btn { font-size: 1.5rem; font-weight: bold; color: var(--accent); transition: 0.3s; text-decoration: none; }
 .nav-btn:hover {font-size: 1.5rem; font-weight: bold; color: var(--accent); text-decoration: none; }
 
@@ -143,7 +128,7 @@ body {
 /* =========================================
    5. GRID DE PROYECTOS (Inferior)
    ========================================= */
-.grid-container {font-size: 1.5rem; font-weight: bold; color: var(--accent); text-decoration: none;}
+.grid-container {font-size: 1.5rem; font-weight: bold; color: var(--accent); }
 
 .card {
   background: var(--card-bg);
