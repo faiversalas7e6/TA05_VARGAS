@@ -96,3 +96,22 @@ a { text-decoration: none; color: inherit; }
     height: 250px; /* Imatges menys altes en mòbil */
   }
 }
+/* --- GENÉRICO PARA PROYECTO 1 --- */
+#theme-toggle {
+    position: fixed; top: 20px; right: 20px; z-index: 9999;
+    width: 45px; height: 45px; border-radius: 50%; border: none; cursor: pointer;
+    background: #2563eb; color: white;
+}
+
+body.dark-mode {
+    background-color: #111827 !important;
+    color: #f3f4f6 !important;
+}
+
+body.dark-mode .sidebar,
+body.dark-mode .card,
+body.dark-mode header {
+    background-color: #1f2937 !important;
+    color: #f3f4f6 !important;
+    border-color: #374151;
+}

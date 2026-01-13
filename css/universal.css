@@ -1,4 +1,6 @@
-/* universal.css - ESTILO PARA TODOS LOS PROYECTOS EN /PAGE */
+/* =========================================
+   1. VARIABLES Y RESET
+   ========================================= */
 :root {
   --primary: #2563eb;
   --dark: #0f172a;
@@ -7,27 +9,28 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-
 body { background: var(--light); color: var(--dark); display: flex; min-height: 100vh; }
+a { text-decoration: none; }
 
-/* BARRA LATERAL (SIDEBAR) */
+/* =========================================
+   2. BARRA LATERAL (PC)
+   ========================================= */
 .sidebar {
   width: var(--sidebar-w);
   background: white;
   border-right: 1px solid #e2e8f0;
-  position: fixed;
-  height: 100vh;
+  position: fixed; /* Fija a la izquierda */
+  top: 0; left: 0; height: 100vh;
   padding: 2rem;
   overflow-y: auto;
+  z-index: 10;
 }
 
+/* Enlaces del Sidebar */
 .back-link {
-  display: block;
-  margin-bottom: 2rem;
-  text-decoration: none;
-  color: #64748b;
-  font-weight: bold;
   display: flex; align-items: center; gap: 10px;
+  margin-bottom: 2rem;
+  color: #64748b; font-weight: bold;
   transition: 0.2s;
 }
 .back-link:hover { color: var(--primary); transform: translateX(-5px); }
@@ -35,37 +38,32 @@ body { background: var(--light); color: var(--dark); display: flex; min-height: 
 .nav-list { list-style: none; }
 .nav-item { margin-bottom: 0.5rem; }
 .nav-link {
-  text-decoration: none;
-  color: #64748b;
-  display: block;
-  padding: 10px;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  display: block; padding: 10px;
+  color: #64748b; border-radius: 6px; font-size: 0.9rem;
 }
 .nav-link:hover, .nav-link.active { background: #eff6ff; color: var(--primary); font-weight: 600; }
 
-/* CONTENIDO PRINCIPAL */
+/* =========================================
+   3. CONTENIDO PRINCIPAL
+   ========================================= */
 .main-content {
-  margin-left: var(--sidebar-w);
+  margin-left: var(--sidebar-w); /* Deja espacio al menú */
   flex: 1;
   padding: 4rem 6rem;
 }
 
+/* Elementos de Texto y Diseño */
 header h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--dark); }
+
 .tag {
   display: inline-block;
-  background: var(--primary);
-  color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
+  background: var(--primary); color: white;
+  padding: 5px 15px; border-radius: 20px;
+  font-size: 0.8rem; font-weight: bold; margin-bottom: 2rem;
 }
 
 .project-showcase {
-  background: white;
-  padding: 2rem;
+  background: white; padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
   margin-bottom: 3rem;
@@ -75,17 +73,86 @@ header h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--dark); }
   height: 300px;
   background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-  font-size: 1.5rem; color: #64748b;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 2rem; font-size: 1.5rem; color: #64748b;
 }
 
 .description h2 { margin-bottom: 1rem; }
 .description p { line-height: 1.8; color: #475569; margin-bottom: 1.5rem; }
 
-/* BOTONES DE NAVEGACIÓN INFERIOR */
+/* Botones inferiores */
 .pagination { display: flex; justify-content: space-between; margin-top: 4rem; border-top: 1px solid #e2e8f0; padding-top: 2rem; }
-.btn { text-decoration: none; padding: 10px 20px; border: 1px solid #cbd5e1; border-radius: 6px; color: #475569; transition: 0.2s; }
+.btn { padding: 10px 20px; border: 1px solid #cbd5e1; border-radius: 6px; color: #475569; transition: 0.2s; }
 .btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* =========================================
+   4. RESPONSIVE (MÓVIL)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Cuerpo vertical */
+    body { flex-direction: column; }
+
+    /* Sidebar arriba */
+    .sidebar {
+        position: relative; /* Deja de ser fija */
+        width: 100%; height: auto;
+        padding: 1rem;
+        border-right: none; border-bottom: 1px solid #e2e8f0;
+    }
+
+    /* Contenido abajo */
+    .main-content {
+        margin-left: 0; /* Quitamos margen izquierdo */
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    header h1 { font-size: 2rem; }
+
+    /* Botones uno debajo de otro */
+    .pagination { flex-direction: column; gap: 1rem; text-align: center; }
+    .btn { display: block; text-align: center; }
+}
+
+/* =========================================
+   5. EXTRAS JS (Botones y Tema)
+   ========================================= */
+
+/* Botón "Volver Arriba" (↑) */
+#btn-subir {
+    background-color: var(--primary) !important;
+    transition: transform 0.2s, background-color 0.2s !important;
+}
+#btn-subir:hover { transform: translateY(-5px); background-color: #1d4ed8 !important; }
+
+/* Botón "Tema Oscuro" (🌗) */
+#theme-toggle {
+    position: fixed; top: 20px; right: 20px;
+    background: var(--primary); color: white;
+    border: none; border-radius: 50%; width: 45px; height: 45px;
+    font-size: 1.5rem; cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999;
+    transition: transform 0.2s;
+}
+#theme-toggle:hover { transform: scale(1.1); }
+
+/* --- MODO OSCURO ACTIVADO --- */
+body.dark-mode { background-color: #0f172a; color: #f1f5f9; }
+
+/* Elementos que cambian de color */
+body.dark-mode .sidebar,
+body.dark-mode .project-showcase {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    border-color: #334155;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode .nav-link { color: #f1f5f9; }
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+    background-color: #334155;
+    color: #60a5fa; /* Azul más claro */
+}

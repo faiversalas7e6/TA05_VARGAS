@@ -1,4 +1,6 @@
-/* Copia aquí el bloque de "RESET" y "SIDEBAR" del archivo anterior para que se vea igual */
+/* =========================================
+   1. VARIABLES Y RESET
+   ========================================= */
 :root {
   --primary-color: #2563eb;
   --text-dark: #1e293b;
@@ -10,192 +12,160 @@
 body { background: var(--bg-light); color: var(--text-dark); }
 a { text-decoration: none; }
 
-/* ESTILOS DEL SIDEBAR (Reducidos para no repetir todo el código aquí, pero úsalos completos) */
-.page-with-sidebar { display: flex; min-height: 100vh; }
-.sidebar { width: var(--sidebar-width); background: white; padding: 2rem; position: fixed; height: 100vh; border-right: 1px solid #ddd;}
-.sidebar-logo { display: flex; gap: 10px; font-weight: bold; color: #333; margin-bottom: 3rem;}
-.logo-icon { background: var(--primary-color); color: white; width: 32px; height: 32px; border-radius: 4px; display: grid; place-items: center;}
+/* =========================================
+   2. ESTRUCTURA (PC)
+   ========================================= */
+.page-with-sidebar {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Barra Lateral Fija */
+.sidebar {
+    width: var(--sidebar-width);
+    background: white;
+    padding: 2rem;
+    position: fixed;
+    top: 0; left: 0; height: 100vh;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.sidebar-logo { display: flex; gap: 10px; font-weight: bold; color: #333; margin-bottom: 3rem; }
+.logo-icon { background: var(--primary-color); color: white; width: 32px; height: 32px; border-radius: 4px; display: grid; place-items: center; }
 .sidebar-nav-list { list-style: none; }
 .sidebar-nav-link { display: flex; justify-content: space-between; padding: 10px 0; color: #666; }
 .sidebar-nav-link:hover { color: var(--primary-color); }
 
-/* ÁREA PRINCIPAL GALERÍA */
+/* Área Principal */
 .main-area {
-  margin-left: var(--sidebar-width);
-  flex: 1;
-  padding: 3rem 4rem;
-}
-.sidebar {
-  /* Propiedades que ya deberías tener */
-  width: 280px; /* o la medida que tengas */
-  background: white;
-  border-right: 1px solid #e2e8f0;
-
-  /* --- LO NUEVO PARA EL SCROLL --- */
-  position: fixed;   /* Fija la barra para que no se mueva de sitio */
-  top: 0;
-  left: 0;
-  height: 100vh;     /* Ocupa el 100% de la altura de la pantalla */
-  overflow-y: auto;  /* ¡MAGIA! Si el contenido es largo, aparece scroll */
-  z-index: 1000;     /* Asegura que esté por encima de otras cosas si hace falta */
-}
-.all-projects-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    padding: 3rem 4rem;
+    /* Configuración para pegar footer abajo */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.all-projects-header h1 {
-  font-size: 2rem;
-}
+/* Cabecera interna y botones */
+.all-projects-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+.all-projects-header h1 { font-size: 2rem; }
+.page-nav { margin-bottom: 2rem; }
+.btn { padding: 8px 16px; border: 1px solid #ccc; border-radius: 4px; color: #333; }
 
-.page-nav {
-  margin-bottom: 2rem;
-}
+/* =========================================
+   3. GALERÍA (Imágenes Grandes)
+   ========================================= */
+/* Empuja el footer hacia abajo si hay poco contenido */
+.projects-gallery { flex: 1; }
 
-.btn {
-  padding: 8px 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #333;
-}
-
-/* GRID DE GALERÍA */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsivo automático */
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Columnas anchas */
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .gallery-item {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
-  color: inherit;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: inherit;
+    display: block;
 }
 
-.gallery-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-}
+.gallery-item:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
 
 .gallery-image {
-  width: 100%;
-  height: 200px;
-  border-radius: 16px 16px 0 0;
-  overflow: hidden;
-  background: #e5e7eb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    height: 350px; /* Altura fija para uniformidad */
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
 }
+
 .gallery-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: .3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la imagen se deforme */
+    transition: transform 0.3s ease;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-item p { padding: 1rem; font-weight: 600; text-align: center; }
 
-.gallery-item p {
-  padding: 1rem;
-  font-weight: 600;
-  text-align: center;
-}
-
+/* Footer */
 .footer {
-  margin-top: 3rem;
-  text-align: center;
-  color: #888;
+    margin-top: 3rem;
+    text-align: center;
+    color: #94a3b8;
+    padding: 2rem 0;
+    border-top: 1px solid #e2e8f0;
 }
-/* --- RESPONSIVE: Mòbils i Tablets (pantalles de menys de 768px) --- */
+
+/* =========================================
+   4. RESPONSIVE (MÓVIL)
+   ========================================= */
 @media (max-width: 768px) {
+    .page-with-sidebar { flex-direction: column; }
 
-  /* 1. Canviem la direcció del contenidor principal */
-  .page-with-sidebar {
-    flex-direction: column; /* Apila els elements verticalment */
-  }
-
-  /* 2. La barra lateral deixa de ser fixa i ocupa tot l'ample */
-  .sidebar {
-    position: relative; /* Ja no és fixa */
-    width: 100%;
-    height: auto; /* Alçada automàtica segons el contingut */
-    padding: 1rem;
-    border-right: none;
-    border-bottom: 1px solid #e2e8f0;
-  }
-
-  /* Opcional: amagar la llista de navegació en mòbil per estalviar espai
-     (Només deixar el logo i fer scroll si cal) */
-  .sidebar-nav {
-    display: none; /* O pots deixar-la visible si no és molt llarga */
-  }
-
-  /* 3. Ajustem el contingut principal */
-  .main-area {
-    margin-left: 0; /* Treiem el marge esquerre gegant */
-    padding: 2rem 1rem; /* Reduïm el padding per a pantalles petites */
-    width: 100%;
-  }
-
-  /* 4. Ajustos de tipografia i graella */
-  .project-header h1 {
-    font-size: 2rem; /* Títols més petits */
-  }
-
-  .project-layout {
-    grid-template-columns: 1fr; /* Una sola columna en lloc de dues */
-    gap: 2rem;
-  }
-
-  .project-image {
-    height: 250px; /* Imatges menys altes en mòbil */
-  }
-}
-/* --- BOTONES DE IDIOMA --- */
-.lang-switcher {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 2000;
-    background: white;
-    padding: 10px;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    display: flex;
-    gap: 10px;
-}
-.lang-switcher button {
-    border: none; background: none; font-size: 1.5rem; cursor: pointer;
-    transition: transform 0.2s;
-}
-.lang-switcher button:hover { transform: scale(1.2); }
-
-/* --- BOTÓN MÓVIL (Oculto en PC) --- */
-.boton-movil {
-    display: none; /* En PC no se ve */
-    position: fixed; top: 15px; right: 15px; z-index: 2000;
-    background: #2563eb; color: white; border: none;
-    font-size: 1.8rem; padding: 5px 12px; border-radius: 8px; cursor: pointer;
-}
-
-/* --- VISTA MÓVIL (Menú Responsive) --- */
-@media (max-width: 768px) {
-    .boton-movil { display: block; } /* En móvil SÍ se ve el botón */
-
+    /* Sidebar pasa a ser cabecera superior */
     .sidebar {
-        transform: translateX(-100%); /* Menú oculto a la izquierda */
-        transition: transform 0.3s ease;
-        position: fixed; top: 0; left: 0; height: 100vh; width: 80%;
-        z-index: 1000; box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+        position: relative;
+        width: 100%; height: auto;
+        padding: 1.5rem;
+        border-right: none; border-bottom: 1px solid #e2e8f0;
+        z-index: 10;
     }
 
-    .sidebar.abierto { transform: translateX(0); } /* Menú visible */
+    .sidebar-logo { margin-bottom: 1rem; justify-content: center; }
+
+    .main-area {
+        margin-left: 0;
+        width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .gallery-grid { grid-template-columns: 1fr; } /* 1 columna en móvil */
+    .gallery-image { height: 250px; }
+    .all-projects-header h1 { font-size: 1.8rem; }
 }
+
+/* =========================================
+   5. EXTRAS JS (Botones y Modo Oscuro)
+   ========================================= */
+/* Botón "Volver Arriba" */
+#btn-subir {
+    background-color: var(--primary-color) !important;
+    transition: transform 0.2s, background-color 0.2s !important;
+}
+#btn-subir:hover { transform: translateY(-5px); background-color: #1d4ed8 !important; }
+
+/* Botón "Modo Oscuro" */
+#theme-toggle {
+    position: fixed; top: 20px; right: 20px;
+    background: var(--primary-color); color: white;
+    border: none; border-radius: 50%; width: 45px; height: 45px;
+    font-size: 1.5rem; cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999;
+    transition: transform 0.2s;
+}
+#theme-toggle:hover { transform: scale(1.1); }
+
+/* Estilos activados por JS */
+body.dark-mode { background-color: #0f172a; color: #f1f5f9; }
+
+body.dark-mode .sidebar,
+body.dark-mode .gallery-item,
+body.dark-mode .btn {
+    background-color: #1e293b;
+    color: #f1f5f9;
+    border-color: #334155;
+}
+
+body.dark-mode .sidebar-nav-link { color: #cbd5e1; }
+body.dark-mode .sidebar-nav-link:hover { color: #60a5fa; }
+body.dark-mode .all-projects-header h1 { color: white; }

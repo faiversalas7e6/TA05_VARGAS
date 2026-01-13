@@ -1,8 +1,10 @@
-/* --- PROYECTO 2: ESTILO MORADO / MODERNO --- */
+/* =========================================
+   1. VARIABLES Y RESET
+   ========================================= */
 :root {
-  --accent: #7c3aed; /* Morado Vibrante */
+  --accent: #7c3aed;  /* Morado Vibrante */
   --dark-bg: #111827; /* Fondo oscuro */
-  --card-bg: #1f2937;
+  --card-bg: #1f2937; /* Cajas oscuras */
   --text-light: #f3f4f6;
   --sidebar-w: 260px;
 }
@@ -11,16 +13,20 @@
 body { background: var(--dark-bg); color: var(--text-light); }
 a { text-decoration: none; color: inherit; }
 
-/* LAYOUT SIDEBAR (Versión Oscura) */
-.page-with-sidebar { display: flex; }
+/* =========================================
+   2. SIDEBAR (PC)
+   ========================================= */
+.page-with-sidebar { display: flex; min-height: 100vh; }
 
 .sidebar {
     width: var(--sidebar-w);
-    background: var(--card-bg); /* Sidebar oscura */
+    background: var(--card-bg);
     border-right: 1px solid #374151;
     position: fixed;
     height: 100vh;
     padding: 2rem;
+    overflow-y: auto;
+    z-index: 10;
 }
 
 .sidebar-logo { color: white; display: flex; gap: 10px; align-items: center; margin-bottom: 3rem; font-weight: bold; }
@@ -30,89 +36,132 @@ a { text-decoration: none; color: inherit; }
 .sidebar-nav-link { display: flex; justify-content: space-between; padding: 15px 0; color: #9ca3af; border-bottom: 1px solid #374151; }
 .sidebar-nav-link:hover, .sidebar-nav-link.active { color: var(--accent); padding-left: 10px; }
 
-/* CONTENIDO PRINCIPAL */
-.main-area { margin-left: var(--sidebar-w); flex: 1; padding: 4rem; background: var(--dark-bg); }
+/* =========================================
+   3. CONTENIDO PRINCIPAL
+   ========================================= */
+.main-area {
+    margin-left: var(--sidebar-w);
+    flex: 1;
+    padding: 4rem;
+    background: var(--dark-bg);
+    /* Configuración para Footer abajo */
+    display: flex;
+    flex-direction: column;
+}
 
+/* Encabezados y Navegación */
 .project-header h1 { font-size: 3rem; border-left: 5px solid var(--accent); padding-left: 20px; margin-bottom: 2rem; }
 
-/* Navegación */
 .page-nav { display: flex; gap: 1rem; margin-bottom: 3rem; }
 .btn { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 10px 20px; border-radius: 4px; transition: 0.3s; }
 .btn:hover { background: var(--accent); color: white; box-shadow: 0 0 15px rgba(124, 58, 237, 0.4); }
 
-/* Layout Proyecto */
+/* Layout del Proyecto */
 .project-layout {
     display: flex;
     flex-direction: column;
-    align-items: center;      /* centra horizontal */
+    align-items: center;
     gap: 2.5rem;
+    flex: 1; /* Empuja el footer */
 }
 
+/* Imagen Circular Estilizada */
 .project-image {
-    width: 300px;
-    height: 300px;
+    width: 300px; height: 300px;
     background: radial-gradient(circle, #4c1d95 0%, #1f2937 100%);
     border-radius: 50%;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     border: 1px solid #374151;
     margin: 0 auto;
     box-shadow: 0 0 40px rgba(139,92,246,.45);
     transition: .3s ease;
 }
-.project-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 60px rgba(139,92,246,.85);
+.project-image:hover { transform: scale(1.05); box-shadow: 0 0 60px rgba(139,92,246,.85); }
+
+.project-image img {
+    width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
 }
 
-#image-1 {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    align-image: center;
-}
+/* Caja de Información */
+.project-info { background: var(--card-bg); padding: 2rem; border-radius: 16px; width: 100%; max-width: 800px; }
+.project-info p { color: #d1d5db; line-height: 1.8; margin-bottom: 2rem; }
 
-.project-info {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 16px;
+.tech-tags { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+.tech-tag { border: 1px solid var(--accent); color: var(--accent); padding: 5px 15px; border-radius: 4px; font-family: monospace; }
 
-}
-
-.project-info p {
-    color: #d1d5db;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-
-}
-
-.tech-tags {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-
-}
-
-.tech-tag {
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 5px 15px;
-    border-radius: 4px;
-    font-family: monospace;
-
-}
-
+/* Footer */
 .footer {
     margin-top: 3rem;
     text-align: center;
     color: #6b7280;
     border-top: 1px solid #374151;
-     padding-top: 2rem;
- }
+    padding-top: 2rem;
+}
 
-/* --- RESPONSIVE: Mòbils i Tablets (pantalles de menys de 768px) --- */
-@media (max-width: 768px)
-{
+/* =========================================
+   4. RESPONSIVE (MÓVIL)
+   ========================================= */
+@media (max-width: 768px) {
+    .page-with-sidebar { flex-direction: column; }
+
+    /* Sidebar arriba */
+    .sidebar {
+        position: relative; width: 100%; height: auto;
+        padding: 1.5rem;
+        border-right: none; border-bottom: 1px solid #374151;
+        z-index: 10;
+    }
+    .sidebar-logo { margin-bottom: 1rem; justify-content: center; }
+
+    /* Contenido abajo */
+    .main-area { margin-left: 0; padding: 2rem 1.5rem; width: 100%; }
+
+    /* Ajustes visuales */
+    .project-header h1 { font-size: 2rem; }
+    .project-image { width: 200px; height: 200px; }
+    .btn { width: 100%; text-align: center; margin-bottom: 10px; display: block; }
+    .page-nav { flex-direction: column; gap: 0.5rem; }
+}
+
+/* =========================================
+   5. EXTRAS JS (Botones y Tema)
+   ========================================= */
+
+/* Botón "Volver Arriba" */
+#btn-subir {
+    background-color: var(--accent) !important; /* Color Morado */
+    transition: transform 0.2s, background-color 0.2s !important;
+}
+#btn-subir:hover { transform: translateY(-5px); background-color: #6d28d9 !important; }
+
+/* Botón "Modo Claro" */
+#theme-toggle {
+    position: fixed; top: 20px; right: 20px;
+    background: var(--accent); color: white;
+    border: none; border-radius: 50%; width: 45px; height: 45px;
+    font-size: 1.5rem; cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 9999;
+}
+
+/* --- MODO CLARO (INVERSIÓN) --- */
+/* Como esta web es oscura por defecto, .dark-mode activa el modo CLARO */
+body.dark-mode {
+    background-color: #f8fafc !important; /* Fondo blanco */
+    color: #1e293b !important;            /* Texto negro */
+}
+
+/* Elementos que pasan a blanco */
+body.dark-mode .sidebar,
+body.dark-mode .project-info,
+body.dark-mode .main-area {
+    background-color: #ffffff !important;
+    color: #1e293b;
+    border-color: #e2e8f0;
+}
+
+body.dark-mode .project-header h1,
+body.dark-mode .sidebar-logo,
+body.dark-mode p {
+    color: #1e293b !important;
+}
