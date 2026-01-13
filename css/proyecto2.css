@@ -15,12 +15,12 @@ a { text-decoration: none; color: inherit; }
 .page-with-sidebar { display: flex; }
 
 .sidebar {
-  width: var(--sidebar-w);
-  background: var(--card-bg); /* Sidebar oscura */
-  border-right: 1px solid #374151;
-  position: fixed;
-  height: 100vh;
-  padding: 2rem;
+    width: var(--sidebar-w);
+    background: var(--card-bg); /* Sidebar oscura */
+    border-right: 1px solid #374151;
+    position: fixed;
+    height: 100vh;
+    padding: 2rem;
 }
 
 .sidebar-logo { color: white; display: flex; gap: 10px; align-items: center; margin-bottom: 3rem; font-weight: bold; }
@@ -41,85 +41,78 @@ a { text-decoration: none; color: inherit; }
 .btn:hover { background: var(--accent); color: white; box-shadow: 0 0 15px rgba(124, 58, 237, 0.4); }
 
 /* Layout Proyecto */
-.project-layout { display: flex; flex-direction: column; gap: 2rem; } /* Diferente layout al proyecto 1 */
-
-.project-image {
-  background: radial-gradient(circle, #4c1d95 0%, #1f2937 100%);
-  height: 300px;
-  border-radius: 16px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 2rem; font-weight: bold; letter-spacing: 2px;
-  border: 1px solid #374151;
+.project-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* centra horizontal */
+    gap: 2.5rem;
 }
 
-.project-info { background: var(--card-bg); padding: 2rem; border-radius: 16px; }
-.project-info p { color: #d1d5db; line-height: 1.8; margin-bottom: 2rem; }
+.project-image {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #4c1d95 0%, #1f2937 100%);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #374151;
+    margin: 0 auto;
+    box-shadow: 0 0 40px rgba(139,92,246,.45);
+    transition: .3s ease;
+}
+.project-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 60px rgba(139,92,246,.85);
+}
 
-.tech-tags { display: flex; gap: 10px; margin-top: 10px; }
-.tech-tag { border: 1px solid var(--accent); color: var(--accent); padding: 5px 15px; border-radius: 4px; font-family: monospace; }
+#image-1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    align-image: center;
+}
 
-.footer { margin-top: 3rem; text-align: center; color: #6b7280; border-top: 1px solid #374151; padding-top: 2rem; }
+.project-info {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+
+}
+
+.project-info p {
+    color: #d1d5db;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+
+}
+
+.tech-tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+
+}
+
+.tech-tag {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 5px 15px;
+    border-radius: 4px;
+    font-family: monospace;
+
+}
+
+.footer {
+    margin-top: 3rem;
+    text-align: center;
+    color: #6b7280;
+    border-top: 1px solid #374151;
+     padding-top: 2rem;
+ }
+
 /* --- RESPONSIVE: Mòbils i Tablets (pantalles de menys de 768px) --- */
-@media (max-width: 768px) {
-
-  /* 1. Canviem la direcció del contenidor principal */
-  .page-with-sidebar {
-    flex-direction: column; /* Apila els elements verticalment */
-  }
-
-  /* 2. La barra lateral deixa de ser fixa i ocupa tot l'ample */
-  .sidebar {
-    position: relative; /* Ja no és fixa */
-    width: 100%;
-    height: auto; /* Alçada automàtica segons el contingut */
-    padding: 1rem;
-    border-right: none;
-    border-bottom: 1px solid #e2e8f0;
-  }
-
-  /* Opcional: amagar la llista de navegació en mòbil per estalviar espai
-     (Només deixar el logo i fer scroll si cal) */
-  .sidebar-nav {
-    display: none; /* O pots deixar-la visible si no és molt llarga */
-  }
-
-  /* 3. Ajustem el contingut principal */
-  .main-area {
-    margin-left: 0; /* Treiem el marge esquerre gegant */
-    padding: 2rem 1rem; /* Reduïm el padding per a pantalles petites */
-    width: 100%;
-  }
-
-  /* 4. Ajustos de tipografia i graella */
-  .project-header h1 {
-    font-size: 2rem; /* Títols més petits */
-  }
-
-  .project-layout {
-    grid-template-columns: 1fr; /* Una sola columna en lloc de dues */
-    gap: 2rem;
-  }
-
-/* --- MODIFICACIÓN: IMAGEN --- */
-
-.project-image {
-  /* Quitamos el background radial morado porque la foto lo tapará */
-  background: #000;
-  height: 300px;
-  border-radius: 16px;
-  border: 1px solid #374151;
-
-  /* IMPORTANTE: overflow hidden hace que la imagen respete las esquinas redondeadas */
-  overflow: hidden;
-
-  /* Quitamos display:flex, align-items, etc., porque ya no centramos un elemento pequeño */
-  display: block;
-}
-
-/* NUEVA REGLA: Esto hace que la foto se estire para llenar el hueco */
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Mágica: Rellena todo el cuadro recortando lo que sobre, sin deformar la foto */
-  display: block;    /* Elimina espacios blancos extraños debajo de la imagen */
-}
+@media (max-width: 768px)
+{

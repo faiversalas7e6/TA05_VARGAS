@@ -9,6 +9,6 @@ window.addEventListener('load', () => {
         // Esperamos 2.5 segundos (2500 ms)
         setTimeout(() => {
             intro.classList.add('hidden');
-        }, 2000);
+        }, 600);
     }
 });

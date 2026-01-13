@@ -1,99 +1,124 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Proyecto 2 | Mi Portafolio</title>
+      <title>Project 2 | My Portfolio</title>
       <link rel="stylesheet" href="../css/proyecto2.css">
     </head>
     <body>
-      <div class="page-with-sidebar">
-        <!-- SIDEBAR / NAVEGADOR LATERAL -->
-        <aside class="sidebar">
-          <div class="sidebar-header">
-            <a href="../index.html" class="sidebar-logo">
-              <div class="logo-icon">P</div>
-              <span class="logo-text">Mi Portafolio</span>
-            </a>
+    <div class="page-with-sidebar">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="../index.html" class="sidebar-logo">
+            <div class="logo-icon">P</div>
+            <span class="logo-text">My Portfolio</span>
+          </a>
+        </div>
+        <nav class="sidebar-nav">
+          <p class="sidebar-nav-title">Navigator</p>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="project1.html" class="sidebar-nav-link">
+                <span>Link: Project 1</span>
+                <span class="sidebar-nav-arrow">›</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="project2.html" class="sidebar-nav-link active">
+                <span>Link: Project 2</span>
+                <span class="sidebar-nav-arrow">›</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- MAIN AREA -->
+      <div class="main-area">
+
+        <header class="project-header">
+          <h1>Project 2: WireGuard VPN Secure Deployment</h1>
+        </header>
+
+        <nav class="page-nav">
+          <div class="nav-links">
+            <a href="../index.html" class="btn">Home</a>
+            <a href="proyectos.html" class="btn">All Projects</a>
           </div>
-          <nav class="sidebar-nav">
-            <p class="sidebar-nav-title">Navegador</p>
-            <ul class="sidebar-nav-list">
-              <li class="sidebar-nav-item">
-                <a href="project1.html" class="sidebar-nav-link">
-                  <span>Link: Proyecto 1</span>
-                  <span class="sidebar-nav-arrow">›</span>
-                </a>
-              </li>
-              <li class="sidebar-nav-item">
-                <a href="project2.html" class="sidebar-nav-link active">
-                  <span>Link: Proyecto 2</span>
-                  <span class="sidebar-nav-arrow">›</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </aside>
+          <div class="nav-arrows">
+            <a href="project1.html" class="btn">← Previous</a>
+            <span>2 / 2</span>
+          </div>
+        </nav>
 
-        <!-- ÁREA PRINCIPAL -->
-        <div class="main-area">
-          <!-- Título del Proyecto -->
-          <header class="project-header">
-            <h1>Título: Proyecto 2</h1>
-          </header>
+        <main class="project-content">
+          <div class="project-layout">
 
-          <!-- Navegador entre páginas -->
-          <nav class="page-nav">
-            <div class="nav-links">
-              <a href="../index.html" class="btn">Inicio</a>
-              <a href="proyectos.html" class="btn">Todos los Proyectos</a>
+            <div class="project-image">
+              <img src="../imagen/vpn.png" alt="WireGuard VPN Diagram" id="image-1">
             </div>
-            <div class="nav-arrows">
-              <a href="project1.html" class="btn">← Anterior</a>
-              <span>2 / 2</span>
-            </div>
-          </nav>
 
-          <!-- Contenido del Proyecto -->
-          <main class="project-content">
-            <div class="project-layout">
-              <!-- Imagen del Proyecto -->
-              <div class="project-image">
-                <img src="../imagen/hacking.jpeg">
-              </div>
+            <div class="project-info">
+              <h2>Project Overview</h2>
+              <p>
+                This project focuses on the installation, configuration, and hardening of a
+                **WireGuard VPN server** to provide encrypted remote access to internal networks.
+                WireGuard was chosen for its performance, simplicity, and modern cryptography.
+              </p>
 
-              <!-- Información del Proyecto -->
-              <div class="project-info">
-                <h2>Información del Proyecto</h2>
-                <p>Información del proyecto 2. Esta es una descripción detallada del segundo proyecto que muestra diferentes habilidades y capacidades técnicas. Se implementaron soluciones innovadoras para resolver problemas complejos.</p>
+              <div class="project-details">
 
-                <div class="project-details">
-                  <div class="detail-item">
-                    <label>Tecnologías:</label>
-                    <div class="tech-tags">
-                      <span class="tech-tag">Node.js</span>
-                      <span class="tech-tag">Express</span>
-                      <span class="tech-tag">PostgreSQL</span>
-                    </div>
-                  </div>
-                  <div class="detail-item">
-                    <label>Duración:</label>
-                    <p>4 meses</p>
-                  </div>
-                  <div class="detail-item">
-                    <label>Rol:</label>
-                    <p>Full Stack Developer</p>
+                <div class="detail-item">
+                  <label>Technologies:</label>
+                  <div class="tech-tags">
+                    <span class="tech-tag">WireGuard</span>
+                    <span class="tech-tag">Linux Server</span>
+                    <span class="tech-tag">UFW Firewall</span>
+                    <span class="tech-tag">QR Client Profiles</span>
                   </div>
                 </div>
+
+                <div class="detail-item">
+                  <label>Duration:</label>
+                  <p>1 Month</p>
+                </div>
+
+                <div class="detail-item">
+                  <label>Role:</label>
+                  <p>Network & Security Engineer</p>
+                </div>
+
+                <div class="detail-item">
+                  <label>Objectives:</label>
+                  <p>
+                    • Create encrypted tunnels for remote users
+                    • Prevent unauthorized access
+                    • Implement firewall-based segmentation
+                    • Enable logging and traffic monitoring
+                  </p>
+                </div>
+
+                <div class="detail-item">
+                  <label>Results:</label>
+                  <p>
+                    Secure VPN tunnels were deployed successfully,
+                    allowing remote access while maintaining full data confidentiality and integrity.
+                  </p>
+                </div>
+
               </div>
             </div>
-          </main>
+          </div>
+        </main>
 
-          <!-- Footer -->
-          <footer class="footer">
-            <p>Copyright 2025 - Todos los derechos reservados</p>
-          </footer>
-        </div>
+        <footer class="footer">
+          <p>Copyright 2025 - All rights reserved</p>
+        </footer>
+
       </div>
+    </div>
     </body>
 </html>

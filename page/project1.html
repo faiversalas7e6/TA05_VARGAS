@@ -1,101 +1,131 @@
 <!DOCTYPE html>
-    <html lang="es">
+<html lang="en">
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Proyecto 1 | Mi Portafolio</title>
+      <title>Project 1 | My Portfolio</title>
       <link rel="stylesheet" href="../css/proyecto1.css">
-      <script src="./java/traslate.js"></script>
     </head>
     <body>
-      <div class="page-with-sidebar">
-        <!-- SIDEBAR / NAVEGADOR LATERAL -->
-        <aside class="sidebar">
-          <div class="sidebar-header">
-            <a href="../index.html" class="sidebar-logo">
-              <div class="logo-icon">P</div>
-              <span class="logo-text">Mi Portafolio</span>
-            </a>
+    <div class="page-with-sidebar">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a href="../index.html" class="sidebar-logo">
+            <div class="logo-icon">P</div>
+            <span class="logo-text">My Portfolio</span>
+          </a>
+        </div>
+        <nav class="sidebar-nav">
+          <p class="sidebar-nav-title">Navigator</p>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="project1.html" class="sidebar-nav-link active">
+                <span>Link: Project 1</span>
+                <span class="sidebar-nav-arrow">›</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="project2.html" class="sidebar-nav-link">
+                <span>Link: Project 2</span>
+                <span class="sidebar-nav-arrow">›</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- MAIN AREA -->
+      <div class="main-area">
+
+        <!-- PROJECT TITLE -->
+        <header class="project-header">
+          <h1>Project 1: Secure DMZ Network Architecture</h1>
+        </header>
+
+        <!-- PAGE NAV -->
+        <nav class="page-nav">
+          <div class="nav-links">
+            <a href="../index.html" class="btn">Home</a>
+            <a href="proyectos.html" class="btn">All Projects</a>
           </div>
-          <nav class="sidebar-nav">
-            <p class="sidebar-nav-title">Navegador</p>
-            <ul class="sidebar-nav-list">
-              <li class="sidebar-nav-item">
-                <a href="project1.html" class="sidebar-nav-link active">
-                  <span>Link: Proyecto 1</span>
-                  <span class="sidebar-nav-arrow">›</span>
-                </a>
-              </li>
-              <li class="sidebar-nav-item">
-                <a href="project2.html" class="sidebar-nav-link">
-                  <span>Link: Proyecto 2</span>
-                  <span class="sidebar-nav-arrow">›</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </aside>
+          <div class="nav-arrows">
+            <button class="btn" disabled>← Previous</button>
+            <span>1 / 2</span>
+            <a href="project2.html" class="btn">Next →</a>
+          </div>
+        </nav>
 
-        <!-- ÁREA PRINCIPAL -->
-        <div class="main-area">
-          <!-- Título del Proyecto -->
-          <header class="project-header">
-            <h1>Título: Proyecto 1</h1>
-          </header>
+        <!-- PROJECT CONTENT -->
+        <main class="project-content">
+          <div class="project-layout">
 
-          <!-- Navegador entre páginas -->
-          <nav class="page-nav">
-            <div class="nav-links">
-              <a href="../index.html" class="btn">Inicio</a>
-              <a href="proyectos.html" class="btn">Todos los Proyectos</a>
+            <!-- IMAGE -->
+            <div class="project-image">
+              <img src="../imagen/opendmz.png" alt="DMZ Architecture Diagram">
             </div>
-            <div class="nav-arrows">
-              <button class="btn" disabled>← Anterior</button>
-              <span>1 / 3</span>
-              <a href="project2.html" class="btn">Siguiente →</a>
-            </div>
-          </nav>
 
-          <!-- Contenido del Proyecto -->
-          <main class="project-content">
-            <div class="project-layout">
-              <!-- Imagen del Proyecto -->
-              <div class="project-image">
-                <img src="../imagen/opendmz.png">
-              </div>
+            <!-- INFO -->
+            <div class="project-info">
+              <h2>Project Overview</h2>
+              <p>
+                This project consists of designing and deploying a secure **DMZ (Demilitarized Zone) network architecture**
+                to protect internal infrastructure while allowing secure public access to exposed services.
+                The architecture isolates critical assets from the internet and applies layered security controls.
+              </p>
 
-              <!-- Información del Proyecto -->
-              <div class="project-info">
-                <h2>Información del Proyecto</h2>
-                <p>Información del proyecto 1. Esta es una descripción detallada del proyecto que incluye todos los aspectos importantes como objetivos, metodología, herramientas utilizadas y resultados obtenidos. El proyecto fue desarrollado con las mejores prácticas de la industria.</p>
+              <div class="project-details">
 
-                <div class="project-details">
-                  <div class="detail-item">
-                    <label>Tecnologías:</label>
-                    <div class="tech-tags">
-                      <span class="tech-tag">React</span>
-                      <span class="tech-tag">TypeScript</span>
-                      <span class="tech-tag">Tailwind CSS</span>
-                    </div>
-                  </div>
-                  <div class="detail-item">
-                    <label>Duración:</label>
-                    <p>3 meses</p>
-                  </div>
-                  <div class="detail-item">
-                    <label>Rol:</label>
-                    <p>Desarrollador Principal</p>
+                <div class="detail-item">
+                  <label>Technologies:</label>
+                  <div class="tech-tags">
+                    <span class="tech-tag">pfSense Firewall</span>
+                    <span class="tech-tag">VLAN Segmentation</span>
+                    <span class="tech-tag">Snort IDS</span>
+                    <span class="tech-tag">Linux Servers</span>
                   </div>
                 </div>
+
+                <div class="detail-item">
+                  <label>Duration:</label>
+                  <p>2 Months</p>
+                </div>
+
+                <div class="detail-item">
+                  <label>Role:</label>
+                  <p>Cybersecurity Architect & Network Administrator</p>
+                </div>
+
+                <div class="detail-item">
+                  <label>Objectives:</label>
+                  <p>
+                    • Isolate public services from internal LAN
+                    • Implement firewall rules and intrusion detection
+                    • Harden exposed servers
+                    • Monitor and log network activity
+                  </p>
+                </div>
+
+                <div class="detail-item">
+                  <label>Results:</label>
+                  <p>
+                    Achieved a hardened network perimeter, reduced attack surface,
+                    and implemented full traffic monitoring with real-time alerting.
+                  </p>
+                </div>
+
               </div>
             </div>
-          </main>
+          </div>
+        </main>
 
-          <!-- Footer -->
-          <footer class="footer">
-            <p>Copyright 2025 - Todos los derechos reservados</p>
-          </footer>
-        </div>
+        <!-- FOOTER -->
+        <footer class="footer">
+          <p>Copyright 2025 - All rights reserved</p>
+        </footer>
+
       </div>
+    </div>
     </body>
 </html>
