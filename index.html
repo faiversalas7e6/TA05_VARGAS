@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faiver Salas| Proyectos</title>
+    <title>Faiver Salas | Proyectos</title>
     <link rel="icon" type="image/png" href="mi-logo.png">
     <link rel="stylesheet" href="estilos.css">
     
@@ -67,11 +67,12 @@
         }
 
         .module-card:hover {
-            background: rgba(0, 242, 255, 0.1);
-            border-color: #00f2ff;
+            /* CAMBIO: Fondo verde ácido transparente */
+            background: rgba(57, 255, 20, 0.1);
+            border-color: #39ff14;
             border-left-width: 10px;
             transform: translateX(10px);
-            box-shadow: -5px 0 15px rgba(0, 242, 255, 0.2);
+            box-shadow: -5px 0 15px rgba(57, 255, 20, 0.2);
         }
 
         .module-card h3 {
@@ -90,8 +91,9 @@
         /* --- COLUMNA DERECHA: PANTALLA DE DATOS --- */
         .info-screen {
             background: rgba(5, 5, 16, 0.9);
-            border: 1px solid #00f2ff;
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.1) inset;
+            /* CAMBIO: Borde verde */
+            border: 1px solid #39ff14;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.1) inset;
             padding: 40px;
             position: relative;
             display: flex;
@@ -103,21 +105,24 @@
         /* Decoración de esquinas */
         .info-screen::before {
             content: ''; position: absolute; top: 0; left: 0;
-            width: 20px; height: 20px; border-top: 3px solid #00f2ff; border-left: 3px solid #00f2ff;
+            /* CAMBIO: Esquina verde */
+            width: 20px; height: 20px; border-top: 3px solid #39ff14; border-left: 3px solid #39ff14;
         }
         .info-screen::after {
             content: ''; position: absolute; bottom: 0; right: 0;
-            width: 20px; height: 20px; border-bottom: 3px solid #00f2ff; border-right: 3px solid #00f2ff;
+            /* CAMBIO: Esquina verde */
+            width: 20px; height: 20px; border-bottom: 3px solid #39ff14; border-right: 3px solid #39ff14;
         }
 
         /* Contenido dinámico */
         #screen-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
-            color: #00f2ff;
+            /* CAMBIO: Texto verde */
+            color: #39ff14;
             margin-bottom: 20px;
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
         }
 
         #screen-desc {
@@ -132,8 +137,9 @@
             align-self: flex-start;
             padding: 10px 30px;
             background: transparent;
-            border: 1px solid #bc13fe;
-            color: #bc13fe;
+            /* CAMBIO: Botón Rojo Neón */
+            border: 1px solid #ff003c;
+            color: #ff003c;
             text-decoration: none;
             font-family: 'Orbitron';
             text-transform: uppercase;
@@ -144,15 +150,17 @@
         #screen-btn.visible { opacity: 1; }
 
         #screen-btn:hover {
-            background: #bc13fe;
-            color: #000;
-            box-shadow: 0 0 15px #bc13fe;
+            /* CAMBIO: Hover Rojo relleno */
+            background: #ff003c;
+            color: #fff;
+            box-shadow: 0 0 15px #ff003c;
         }
 
         /* Animación de escaneo de fondo */
         .screen-scanline {
             position: absolute; top: 0; left: 0; width: 100%; height: 5px;
-            background: rgba(0, 255, 65, 0.3);
+            /* CAMBIO: Scanline verde */
+            background: rgba(57, 255, 20, 0.3);
             animation: scanScreen 4s linear infinite;
             opacity: 0.3;
             pointer-events: none;
@@ -171,7 +179,7 @@
         }
 
         /* =========================================================
-           PERSONALIZACIÓN DEL TRADUCTOR DE GOOGLE (ESTILO CYBERPUNK)
+           PERSONALIZACIÓN DEL TRADUCTOR DE GOOGLE (ESTILO TOXIC)
            ========================================================= */
         
         .translator-box {
@@ -187,7 +195,8 @@
         /* Estilo del botón principal */
         .goog-te-gadget-simple {
             background-color: rgba(0, 0, 0, 0.7) !important; /* Fondo oscuro */
-            border: 1px solid #bc13fe !important; /* Borde morado neón */
+            /* CAMBIO: Borde Verde */
+            border: 1px solid #39ff14 !important; 
             padding: 8px 12px !important;
             border-radius: 0 !important; /* Bordes cuadrados */
             font-family: 'Orbitron', sans-serif !important;
@@ -196,8 +205,9 @@
 
         /* Efecto Hover */
         .goog-te-gadget-simple:hover {
-            background: rgba(188, 19, 254, 0.2) !important;
-            box-shadow: 0 0 10px #bc13fe;
+            /* CAMBIO: Hover Verde */
+            background: rgba(57, 255, 20, 0.2) !important;
+            box-shadow: 0 0 10px #39ff14;
         }
 
         /* Texto dentro del botón (Idioma) */
@@ -209,7 +219,8 @@
 
         /* Las flechas y separadores */
         .goog-te-menu-value span {
-            color: #00f2ff !important; /* Flecha cian */
+            /* CAMBIO: Flecha verde */
+            color: #39ff14 !important; 
             border-left: none !important; /* Quitar linea separatoria */
         }
 
@@ -255,8 +266,8 @@
                 </div>
 
                 <a href="proyectostotal.html" style="text-decoration: none;">
-                    <div class="module-card" style="border-left-color: #bc13fe;" onmouseenter="updateScreen(3)" onmouseleave="resetScreen()">
-                        <h3 style="color: #bc13fe;">TODOS LOS PROYECTOS</h3>
+                    <div class="module-card" style="border-left-color: #ff003c;" onmouseenter="updateScreen(3)" onmouseleave="resetScreen()">
+                        <h3 style="color: #ff003c;">TODOS LOS PROYECTOS</h3>
                         <p>Ver base de datos completa (3-30)</p>
                     </div>
                 </a>
@@ -280,7 +291,7 @@
     </main>
 
     <footer>
-        <p>SISTEMA ONLINE - 2025 DÍDAC VÁZQUEZ - TODOS LOS DERECHOS RESERVADOS</p>
+        <p>SISTEMA ONLINE - 2025 FAIVER SALAS - TODOS LOS DERECHOS RESERVADOS</p>
     </footer>
 
     <script>
