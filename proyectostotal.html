@@ -3,65 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dídac Vázquez | Portfolio</title>
-    <link rel="icon" type="image/png" href="mi-logo.png">
-    <link rel="stylesheet" href="estilos.css">
-    
-    <style>
-        /* =========================================================
-           ESTILOS DEL TRADUCTOR (CYBERPUNK)
-           ========================================================= */
-        
-        /* Posicionamiento: Se mantiene relativo a donde lo pusiste en el HTML, 
-           pero nos aseguramos que se vea bien */
-        .translator-box {
-            /* Si quieres que flote a la derecha, descomenta la siguiente línea. 
-               Si no, se quedará donde lo pusiste en el flujo del header. */
-            /* position: absolute; top: 20px; right: 20px; */
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 20px;
-            z-index: 1000;
-        }
-
-        /* Elimina el borde azul superior de Google */
-        .goog-te-banner-frame.skiptranslate { display: none !important; } 
-        body { top: 0px !important; }
-
-        /* Estilo del botón principal */
-        .goog-te-gadget-simple {
-            background-color: rgba(0, 0, 0, 0.7) !important;
-            border: 1px solid #bc13fe !important; /* Borde morado */
-            padding: 8px 12px !important;
-            border-radius: 0 !important;
-            font-family: 'Orbitron', sans-serif !important; /* Fuente futurista si la tienes cargada */
-            transition: all 0.3s ease;
-        }
-
-        /* Efecto Hover */
-        .goog-te-gadget-simple:hover {
-            background: rgba(188, 19, 254, 0.2) !important;
-            box-shadow: 0 0 10px #bc13fe;
-        }
-
-        /* Texto dentro del botón */
-        .goog-te-gadget-simple span {
-            color: #fff !important;
-            font-size: 14px !important;
-            font-weight: bold;
-        }
-
-        /* Flechas y separadores */
-        .goog-te-menu-value span {
-            color: #00f2ff !important; /* Cian */
-            border-left: none !important;
-        }
-
-        /* Ocultar el logo de Google */
-        .goog-te-gadget-icon {
-            display: none !important;
-        }
-    </style>
+    <title>Faiver Salas | Portfolio</title>
+    <link rel="icon" type="image/png" href="./imagen/mi-logo.png">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/proyectos.css">
 </head>
 <body>
 
@@ -114,7 +59,7 @@
     </main>
 
     <footer>
-        <p>SISTEMA ONLINE - 2025 DÍDAC VÁZQUEZ - TODOS LOS DERECHOS RESERVADOS</p>
+        <p>SISTEMA ONLINE - Faiver Salas - TODOS LOS DERECHOS RESERVADOS</p>
     </footer>
 
     <script>
@@ -138,18 +83,18 @@
 
         // 3. Generador automático de proyectos (Del 3 al 30)
         const container = document.getElementById('projects-container');
-        
+
         for(let i = 3; i <= 30; i++) {
             const link = document.createElement('a');
-            
+
             // CORREGIDO: Enlazamos a index.html (con comillas)
-            link.href = 'index.html'; 
-            
+            link.href = 'index.html';
+
             link.className = 'mini-card';
-            
+
             // CORREGIDO: Texto "Próximamente"
             link.innerHTML = `<strong>PROYECTO ${i}</strong><span style="font-size:0.7em; color:#666">Próximamente</span>`;
-            
+
             container.appendChild(link);
         }
 
@@ -157,14 +102,14 @@
         const input = document.getElementById('project-search');
         input.addEventListener('keyup', function() {
             const filter = this.value.toLowerCase();
-            
+
             // Buscar en destacados
             const heroes = document.querySelectorAll('.project-card-hero');
             heroes.forEach(card => {
                 const text = card.innerText.toLowerCase();
                 card.style.display = text.includes(filter) ? 'block' : 'none';
             });
-            
+
             // Buscar en minis (archivo)
             const minis = document.querySelectorAll('.mini-card');
             minis.forEach(card => {
@@ -184,6 +129,7 @@
             }, 'google_translate_element');
         }
     </script>
+    <script src="./js/buscador.js"></script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

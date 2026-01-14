@@ -4,145 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Proyecto 1 - Terminal Ciberadmin</title>
-  <link rel="stylesheet" href="estilos.css">
-  <link rel="icon" type="image/png" href="mi-logo.png">
-  <style>
-    /* =========================================================
-       1. AJUSTE DEL HEADER (Flexbox para centrar)
-       ========================================================= */
-    header {
-        display: flex;
-        flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
-        justify-content: space-between; /* Distribuye espacio */
-        align-items: center; /* Alinea verticalmente al centro */
-        padding: 20px;
-        gap: 20px; /* Espacio entre título, menú y traductor */
-    }
+  <link rel="stylesheet" href="./css/estilos.css">
+  <link rel="stylesheet" href="./css/proyecto1.css">
+  <link rel="icon" type="image/png" href="./imagen/mi-logo.png">
 
-    header h1 {
-        margin: 0;
-        flex-grow: 1;
-        min-width: 200px;
-    }
-
-    /* Contenedor para agrupar Nav y Traductor */
-    .header-controls {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center; /* Si bajan de línea, se centran */
-    }
-
-    /* =========================================================
-       2. ESTILOS DE LA TERMINAL
-       ========================================================= */
-    .terminal-container {
-        width: 100%;
-        max-width: 800px;
-        margin: 20px auto;
-        background-color: #0c0c0c;
-        border: 1px solid #333;
-        border-radius: 5px;
-        box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
-        font-family: 'Courier New', monospace;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        height: 500px;
-    }
-
-    .terminal-header {
-        background: #1a1a1a;
-        padding: 5px 15px;
-        color: #ccc;
-        font-size: 0.8rem;
-        border-bottom: 1px solid #333;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .terminal-body {
-        flex: 1;
-        padding: 15px;
-        overflow-y: auto;
-        color: #00ff41; /* Verde Hacker clásico */
-        font-size: 0.95rem;
-    }
-
-    /* Input invisible para escribir */
-    .input-line {
-        display: flex;
-        align-items: center;
-    }
-
-    .prompt {
-        color: #00f2ff; /* Cyan para el usuario */
-        margin-right: 10px;
-        white-space: nowrap;
-    }
-
-    #cmdInput {
-        background: transparent;
-        border: none;
-        color: #fff;
-        font-family: 'Courier New', monospace;
-        font-size: 0.95rem;
-        flex: 1;
-        outline: none;
-    }
-
-    /* Scrollbar personalizada */
-    .terminal-body::-webkit-scrollbar { width: 8px; }
-    .terminal-body::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-
-    /* Efecto de respuesta del sistema */
-    .response-line { margin-bottom: 5px; color: #ccc; }
-    .success { color: #00ff41; }
-    .error { color: #ff3333; }
-    .warning { color: #ffcc00; }
-
-    /* =========================================================
-       3. ESTILOS DEL TRADUCTOR (MODIFICADO: NO ABSOLUTO)
-       ========================================================= */
-    
-    .translator-box {
-        /* IMPORTANTE: position static para que fluya en el medio */
-        position: static; 
-        z-index: 1000;
-    }
-
-    .goog-te-banner-frame.skiptranslate { display: none !important; } 
-    body { top: 0px !important; }
-
-    .goog-te-gadget-simple {
-        background-color: rgba(0, 0, 0, 0.7) !important;
-        border: 1px solid #bc13fe !important;
-        padding: 8px 12px !important;
-        border-radius: 0 !important;
-        font-family: 'Orbitron', sans-serif !important;
-        transition: all 0.3s ease;
-    }
-
-    .goog-te-gadget-simple:hover {
-        background: rgba(188, 19, 254, 0.2) !important;
-        box-shadow: 0 0 10px #bc13fe;
-    }
-
-    .goog-te-gadget-simple span {
-        color: #fff !important;
-        font-size: 14px !important;
-        font-weight: bold;
-    }
-
-    .goog-te-menu-value span {
-        color: #00f2ff !important;
-        border-left: none !important;
-    }
-
-    .goog-te-gadget-icon { display: none !important; }
-
-  </style>
 </head>
 <body>
   <header>
@@ -190,7 +55,7 @@
     input.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
             const command = this.value.trim().toLowerCase();
-            
+
             // 1. Añadir la línea que el usuario escribió al historial
             printLine(`root@server:~$ ${this.value}`, 'prompt-style');
 
@@ -209,10 +74,10 @@
         if (type === 'error') div.style.color = '#ff3333';
         if (type === 'success') div.style.color = '#00ff41';
         if (type === 'prompt-style') div.style.color = '#00f2ff';
-        
+
         // Insertamos antes de la línea de input
         output.insertBefore(div, container);
-        
+
         // Simular escritura o imprimir directo
         div.innerHTML = text;
     }
@@ -254,7 +119,7 @@
                     output.scrollTop = output.scrollHeight;
                 }, 2000);
                 break;
-            
+
             case 'ping':
                 printLine("Pinging google.com [8.8.8.8] with 32 bytes of data:");
                 let count = 0;
@@ -286,7 +151,7 @@
     }
   </script>
 
-  <script src="futurista.js"></script>
+  <script src="./js/futurista.js"></script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

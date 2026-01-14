@@ -1,0 +1,157 @@
+/* css/inicio.css */
+
+/* =========================================================
+   1. AJUSTES DEL HEADER (Anti-Colapso)
+   ========================================================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    flex-grow: 1;
+    min-width: 250px;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* =========================================================
+   2. ESTILOS DE LA PORTADA SPLIT (INICIO)
+   ========================================================= */
+.main-interface {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    height: 70vh;
+    margin-top: 30px;
+}
+
+/* Columna Izquierda */
+.modules-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.module-card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #333;
+    border-left: 4px solid #333;
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.module-card:hover {
+    background: rgba(57, 255, 20, 0.1);
+    border-color: #39ff14;
+    border-left-width: 10px;
+    transform: translateX(10px);
+    box-shadow: -5px 0 15px rgba(57, 255, 20, 0.2);
+}
+
+.module-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.module-card p {
+    color: #888;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+/* Columna Derecha */
+.info-screen {
+    background: rgba(5, 5, 16, 0.9);
+    border: 1px solid #39ff14;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.1) inset;
+    padding: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.info-screen::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 20px; height: 20px; border-top: 3px solid #39ff14; border-left: 3px solid #39ff14;
+}
+.info-screen::after {
+    content: ''; position: absolute; bottom: 0; right: 0;
+    width: 20px; height: 20px; border-bottom: 3px solid #39ff14; border-right: 3px solid #39ff14;
+}
+
+#screen-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #39ff14;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+#screen-desc {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+#screen-btn {
+    align-self: flex-start;
+    padding: 10px 30px;
+    background: transparent;
+    border: 1px solid #ff003c;
+    color: #ff003c;
+    text-decoration: none;
+    font-family: 'Orbitron';
+    text-transform: uppercase;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+#screen-btn.visible { opacity: 1; }
+
+#screen-btn:hover {
+    background: #ff003c;
+    color: #fff;
+    box-shadow: 0 0 15px #ff003c;
+}
+
+.screen-scanline {
+    position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+    background: rgba(57, 255, 20, 0.3);
+    animation: scanScreen 4s linear infinite;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+@keyframes scanScreen {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+
+@media (max-width: 768px) {
+    .main-interface { grid-template-columns: 1fr; height: auto; }
+    .info-screen { min-height: 300px; }
+    header { flex-direction: column; align-items: flex-start; }
+    .header-controls { width: 100%; justify-content: space-between; margin-top: 10px; }
+}
