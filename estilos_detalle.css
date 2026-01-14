@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+:root {
+    /* CAMBIO: De Cian/Verde a Naranja/Oro */
+    --neon: #ff4800;   /* Naranja Quemado */
+    --neon-2: #ffcc00; /* Amarillo Oro */
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    /* CAMBIO: Fondo negro con un tinte rojizo muy sutil en lugar de azulado */
+    background: #080202; 
+    /* CAMBIO: Texto blanco cálido */
+    color: #fff5e6;
+}
+
+.header {
+    padding: 1.2rem;
+}
+
+.title {
+    color: var(--neon);
+    /* CAMBIO: Sombras ajustadas al naranja */
+    text-shadow: 0 0 18px rgba(255, 72, 0, 0.4), 0 0 36px rgba(255, 204, 0, 0.15);
+}
+
+.details {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.4rem;
+    border-radius: 10px;
+    /* CAMBIO: Sombra sutil rojiza */
+    box-shadow: 0 8px 40px rgba(255, 72, 0, 0.05);
+}
+
+.cta-primary {
+    display: inline-block;
+    padding: 1rem 1.6rem;
+    border-radius: 12px;
+    /* CAMBIO: Color de texto oscuro rojizo */
+    color: #1a0500;
+    /* CAMBIO: Gradiente de Fuego */
+    background: linear-gradient(90deg, #ff4800, #ffcc00);
+    font-weight: 700;
+    /* CAMBIO: Glow naranja intenso */
+    box-shadow: 0 10px 50px rgba(255, 72, 0, 0.35);
+}
+
+.cta-secondary {
+    display: inline-block;
+    padding: 0.9rem 1.4rem;
+    border-radius: 12px;
+    color: var(--neon);
+    /* CAMBIO: Borde dorado */
+    border: 1px solid rgba(255, 204, 0, 0.3);
+}
+
+.caption {
+    color: rgba(255, 245, 230, 0.7);
+}
