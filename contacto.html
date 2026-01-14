@@ -33,7 +33,7 @@
     }
 
     /* =========================================================
-       2. ESTILOS DEL TRADUCTOR (CYBERPUNK)
+       2. ESTILOS DEL TRADUCTOR (CYBERPUNK TOXIC)
        ========================================================= */
     .translator-box {
         z-index: 1000;
@@ -44,7 +44,8 @@
 
     .goog-te-gadget-simple {
         background-color: rgba(0, 0, 0, 0.7) !important;
-        border: 1px solid #bc13fe !important;
+        /* CAMBIO: Borde Rojo */
+        border: 1px solid #ff003c !important;
         padding: 8px 12px !important;
         border-radius: 0 !important;
         font-family: 'Orbitron', sans-serif !important;
@@ -52,8 +53,9 @@
     }
 
     .goog-te-gadget-simple:hover {
-        background: rgba(188, 19, 254, 0.2) !important;
-        box-shadow: 0 0 10px #bc13fe;
+        /* CAMBIO: Hover Rojo */
+        background: rgba(255, 0, 60, 0.2) !important;
+        box-shadow: 0 0 10px #ff003c;
     }
 
     .goog-te-gadget-simple span {
@@ -63,7 +65,8 @@
     }
 
     .goog-te-menu-value span {
-        color: #00f2ff !important;
+        /* CAMBIO: Flecha Verde */
+        color: #39ff14 !important;
         border-left: none !important;
     }
 
@@ -78,8 +81,10 @@
         padding: 40px;
         background: rgba(5, 5, 16, 0.85);
         border: 1px solid #333;
-        border-left: 5px solid #00f2ff;
-        box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+        /* CAMBIO: Borde Izquierdo Verde */
+        border-left: 5px solid #39ff14;
+        /* CAMBIO: Sombra Verde */
+        box-shadow: 0 0 20px rgba(57, 255, 20, 0.1);
         position: relative;
         overflow: hidden;
         backdrop-filter: blur(5px);
@@ -89,12 +94,14 @@
     /* Decoración de esquina */
     .contact-terminal::before {
         content: ''; position: absolute; top: 0; right: 0;
-        width: 30px; height: 30px; border-top: 2px solid #bc13fe; border-right: 2px solid #bc13fe;
+        /* CAMBIO: Esquina Roja */
+        width: 30px; height: 30px; border-top: 2px solid #ff003c; border-right: 2px solid #ff003c;
     }
 
     .intro-text {
         font-family: 'Courier New', monospace;
-        color: #00f2ff;
+        /* CAMBIO: Texto Verde */
+        color: #39ff14;
         margin-bottom: 30px;
         border-bottom: 1px solid #333;
         padding-bottom: 10px;
@@ -102,7 +109,9 @@
 
     /* ESTILOS DE FORMULARIO */
     form label {
-        display: block; margin-top: 20px; color: #bc13fe;
+        display: block; margin-top: 20px; 
+        /* CAMBIO: Label Rojo */
+        color: #ff003c;
         font-family: 'Orbitron', sans-serif; font-size: 0.9rem;
         letter-spacing: 1px; text-transform: uppercase;
     }
@@ -114,8 +123,9 @@
     }
 
     form input:focus, form textarea:focus {
-        background: rgba(0, 242, 255, 0.05); border-bottom: 2px solid #00f2ff;
-        box-shadow: 0 5px 10px rgba(0, 242, 255, 0.1); padding-left: 20px;
+        /* CAMBIO: Focus Verde */
+        background: rgba(57, 255, 20, 0.05); border-bottom: 2px solid #39ff14;
+        box-shadow: 0 5px 10px rgba(57, 255, 20, 0.1); padding-left: 20px;
     }
 
     form textarea { min-height: 120px; resize: vertical; }
@@ -123,20 +133,24 @@
     /* BOTÓN */
     button[type="submit"] {
         margin-top: 30px; width: 100%; padding: 15px;
-        background: transparent; border: 1px solid #00f2ff; color: #00f2ff;
+        background: transparent; 
+        /* CAMBIO: Borde y Texto Verde */
+        border: 1px solid #39ff14; color: #39ff14;
         font-family: 'Orbitron', sans-serif; font-weight: bold; letter-spacing: 2px;
         text-transform: uppercase; cursor: pointer; position: relative;
         transition: 0.3s; overflow: hidden;
     }
 
     button[type="submit"]:hover {
-        background: #00f2ff; color: #000; box-shadow: 0 0 20px #00f2ff;
+        /* CAMBIO: Hover Verde Relleno */
+        background: #39ff14; color: #000; box-shadow: 0 0 20px #39ff14;
     }
 
     /* LÍNEA DECORATIVA */
     .scan-line {
         position: absolute; top: 0; left: 0; width: 100%; height: 2px;
-        background: rgba(0, 242, 255, 0.5); animation: scan 3s linear infinite;
+        /* CAMBIO: Linea Verde */
+        background: rgba(57, 255, 20, 0.5); animation: scan 3s linear infinite;
         opacity: 0.5; pointer-events: none; z-index: 10;
     }
 
@@ -164,8 +178,10 @@
     @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
 
     .success-icon {
-        font-size: 4rem; color: #00f2ff;
-        text-shadow: 0 0 20px #00f2ff;
+        font-size: 4rem; 
+        /* CAMBIO: Icono Verde */
+        color: #39ff14;
+        text-shadow: 0 0 20px #39ff14;
         margin-bottom: 20px;
         animation: pulseIcon 2s infinite;
     }
@@ -186,7 +202,8 @@
     }
     .btn-loading::after {
         content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 0%;
-        background: #00f2ff;
+        /* CAMBIO: Barra de carga Verde */
+        background: #39ff14;
         animation: loadingBar 1.5s ease-in-out forwards; /* Duración de la "subida" */
     }
 
@@ -205,7 +222,7 @@
         <nav class="main-nav">
           <a href="index.html">Inicio</a>
           <a href="proyectostotal.html">Archivo</a>
-          <a href="contacto.html" style="color:var(--primary); border-bottom:2px solid var(--primary);">Contacto</a>
+          <a href="contacto.html" style="color:#39ff14; border-bottom:2px solid #39ff14;">Contacto</a>
         </nav>
         
         <div id="google_translate_element" class="translator-box"></div>
@@ -249,7 +266,7 @@
                 He recibido tu mensaje correctamente.<br>
                 Te responderé a la mayor brevedad posible.
             </p>
-            <button onclick="location.reload()" style="margin-top:40px; border-color:#bc13fe; color:#bc13fe; width:auto; padding:10px 40px;">
+            <button onclick="location.reload()" style="margin-top:40px; border-color:#ff003c; color:#ff003c; width:auto; padding:10px 40px;">
                 VOLVER
             </button>
         </div>
