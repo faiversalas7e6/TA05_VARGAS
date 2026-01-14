@@ -1,9 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
-:root{--neon:#00ffea; --neon-2:#6bffb8}
-body{font-family:'Orbitron',sans-serif; background:#000014; color:#e9fff8}
-.header{padding:1.2rem}
-.title{color:var(--neon); text-shadow:0 0 18px rgba(0,255,234,0.4), 0 0 36px rgba(107,255,184,0.12)}
-.details{background:rgba(255,255,255,0.02); padding:1.4rem; border-radius:10px; box-shadow:0 8px 40px rgba(0,255,234,0.03)}
-.cta-primary{display:inline-block;padding:1rem 1.6rem;border-radius:12px;color:#001217;background:linear-gradient(90deg,#00f0ff,#6bffb8);font-weight:700;box-shadow:0 10px 50px rgba(0,255,234,0.28)}
-.cta-secondary{display:inline-block;padding:0.9rem 1.4rem;border-radius:12px;color:var(--neon);border:1px solid rgba(107,255,184,0.18)}
-.caption{color:rgba(233,255,248,0.7)}
